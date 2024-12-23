@@ -17,7 +17,7 @@ const Team: React.FC = () => {
             className="w-48 h-48 mx-auto rounded-full object-cover mb-4"
           />
           <h3 className="text-xl font-semibold text-center">Vipul Dutta</h3>
-          <p className="text-blue-600 text-center my-3">CEO & Founder</p>
+          <p className="text-black font-semibold text-center my-3">Founder & CEO</p>
           <p className="text-gray-600 text-center">
           Vipul Dutta, the all-star of tech entrepreneurship and the Mastermind-in-Chief over at Bigwig Media Group of Companies. With a legendary 23-year run in the high-stakes world of Digital Marketing and Advertising, he's practically royalty in the industry. No kidding! His majestic career is littered with illustrious roles like 'Director of Adglobal360- Hakahodo (Japan),' 'Lord High Director of Pensa Media - a Google Partner Company (India),' and 'Supreme Leader at PBL/ACP Media (New Zealand).' Not just content being one of the pioneer in digital marketing, he's got a serious crush on AI and is hell-bent on spearheading the next wave of innovative firepower in the digital market landscape.
           </p>
