@@ -11,12 +11,26 @@ import Blog from "../components/Blog";
 import { FaRegMessage } from "react-icons/fa6";
 import ContactUs from "../components/Contact";
 import ImageSlider from "../components/Testimonial";
-
+import { useLocation } from "react-router-dom";
 
 
 function Landing() {
   const [isVisible, setIsVisible] = useState(false);
   const [isContactPanelOpen, setIsContactPanelOpen] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.sectionId) {
+      const sectionId = location.state.sectionId;
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const yOffset = -70; // Adjust for navbar height
+        const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: yPosition, behavior: 'smooth' });
+      }
+    }
+  }, [location.state]);
 
   // Handle scroll to top button visibility
   useEffect(() => {
