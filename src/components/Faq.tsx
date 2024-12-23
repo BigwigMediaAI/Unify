@@ -3,39 +3,39 @@ import { useState } from "react";
 function FAQ() {
   const faqs = [
     {
-      question: "What is Unify?",
+      question: "What is Unifyi?",
       answer:
-        "Unify is a comprehensive platform designed to streamline and centralize admissions processes for higher education institutions.",
+        "Unifyi is a comprehensive platform designed to streamline and centralize admissions processes for higher education institutions.",
     },
     {
-      question: "How does Unify improve the admissions process?",
+      question: "How does Unifyi improve the admissions process?",
       answer:
-        "Unify automates application processing, centralizes inquiries, and provides customizable post-application workflows to make admissions seamless.",
+        "Unifyi automates application processing, centralizes inquiries, and provides customizable post-application workflows to make admissions seamless.",
     },
     {
-      question: "Is Unify suitable for all types of educational institutions?",
+      question: "Is Unifyi suitable for all types of educational institutions?",
       answer:
-        "Yes, Unify is flexible and can be tailored to the specific needs of universities, colleges, and other higher education organizations.",
+        "Yes, Unifyi is flexible and can be tailored to the specific needs of universities, colleges, and other higher education organizations.",
     },
     {
-      question: "Can Unify integrate with existing systems?",
+      question: "Can Unifyi integrate with existing systems?",
       answer:
-        "Absolutely! Unify supports integration with various existing systems to ensure a smooth transition and workflow.",
+        "Absolutely! Unifyi supports integration with various existing systems to ensure a smooth transition and workflow.",
     },
     {
-      question: "What kind of support does Unify offer?",
+      question: "What kind of support does Unifyi offer?",
       answer:
-        "We offer 24/7 customer support, onboarding assistance, and detailed documentation to help you get the most out of Unify.",
+        "We offer 24/7 customer support, onboarding assistance, and detailed documentation to help you get the most out of Unifyi.",
     },
     {
-      question: "Is training provided for using Unify?",
+      question: "Is training provided for using Unifyi?",
       answer:
         "Yes, we provide comprehensive training sessions to ensure your team is comfortable and efficient with the platform.",
     },
     {
-      question: "Does Unify offer analytics features?",
+      question: "Does Unifyi offer analytics features?",
       answer:
-        "Yes, Unify provides in-depth analytics to track admissions metrics, monitor progress, and make data-driven decisions.",
+        "Yes, Unifyi provides in-depth analytics to track admissions metrics, monitor progress, and make data-driven decisions.",
     }
   ];
 

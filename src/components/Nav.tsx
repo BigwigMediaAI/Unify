@@ -52,6 +52,7 @@ function Nav() {
           <span className="text-yellow-500 text-2xl font-bold">i</span>
           <span className="text-green-500 text-2xl font-bold">f</span>
           <span className="text-violet-700 text-2xl font-bold">y</span>
+          <span className="text-teal-700 text-2xl font-bold">i</span>
         </div>
 
         <button

@@ -16,9 +16,14 @@ function Features() {
         "Turn your chaotic admission process into a well-oiled machine. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more \"Who dropped the ball?\" moments.",
       listItems: [
         "Real-Time Updates",
-        "Data Centralization",
-        "Improved Tracking",
-        "Seamless Workflow",
+        "Centralized Database",
+        "Multi Channel Communication",
+        "Admission Workflow Automation",
+        "Payment Integration",
+        "Reporting & Analytics",
+        "Integration With External System",
+        "Compliance & Security",
+        "Document Management"
       ],
       imageUrl: admission,
       id: "admission-management",
@@ -28,10 +33,17 @@ function Features() {
       description:
         "Say goodbye to payment confusion. With integrated payment systems, students can apply and pay in a snap, while you enjoy a smoother, less headachy process. Everyone wins!",
       listItems: [
-        "Integrated Payment",
-        "Simple User Flow",
-        "Payment Confirmation",
-        "Transparency in Payment Process",
+        "Application Creation & Customization",
+        "Payment Integration",
+        "Fee Management",
+        "Application Submission Workflow",
+        "Applicant Tracking",
+        "Centralized Dashboard for Administrator",
+        "Reporting & Analytics",
+        "Secure Document Upload",
+        "Multilingual & Multicurrency Support",
+        "Refund & Dispute Management",
+        "Fraud Prevention & Security"
       ],
       imageUrl: application,
       id: "paid-application-management",
@@ -41,10 +53,18 @@ function Features() {
       description:
         "Get a grip on your leads! Track where they’re coming from, how they’re scoring, and who’s converting—because guessing is so last year.",
       listItems: [
-        "Lead Source Tracking",
-        "Lead Scoring",
-        "Performance Monitoring",
-        "Conversion Optimisation",
+        "Lead Capture",
+        "Centralized Lead Database",
+        "Lead Tracking",
+        "Communication & Engagement",
+        "Automated Workflow Mangement",
+        "Reporting & Analytics",
+        "Mobile Accessibility",
+        "Data Security & Compliance",
+        "Event Management",
+        "Integration With Social Media",
+        "Notification & Reminders",
+        "Scalibility & Flexibilty"
       ],
       imageUrl: lead,
       id: "lead-management",
@@ -54,10 +74,15 @@ function Features() {
       description:
         "Keep your counselors on their toes! Monitor performance, boost engagement, and make sure students and counselors are on the same page (finally).",
       listItems: [
-        "Counselor Performance Tracking",
-        "Improved Engagement",
-        "Centralised Communication",
-        "Real-Time Insights",
+        "Counselor Assignment",
+        "Counselor Profiles",
+        "Interaction Tracking",
+        "Lead & Application Management",
+        "Communication Tools",
+        "Performance Analytics",
+        "Customizable Workflows",
+        "Secure Document Handling",
+        "Data Security & Compliance"
       ],
       imageUrl: conselor,
       id: "counselor-management",
@@ -67,10 +92,15 @@ function Features() {
       description:
         "Put the power in the hands of your students. With a one-stop-shop for communication, fees, and application updates, they’ll wonder how they ever survived without it.",
       listItems: [
-        "Communication Hub",
-        "Application Scoring",
+        "Personalized Dashboard",
+        "Academic Management",
         "Fee Management",
-        "Call History",
+        "Communication & Notification",
+        "Career & Placement Services",
+        "Feedback & Surveys",
+        "Student Support Service",
+        "Event & Activities",
+        "Mobile Accessibility"
       ],
       imageUrl: student,
       id: "student-panel",
@@ -80,10 +110,15 @@ function Features() {
       description:
         "Calling all admins! Run your institution like a boss with a panel that does it all—reports, staff monitoring, and admissions. It’s basically your command center.",
       listItems: [
-        "Institution-wide Control",
-        "Reports and Analytics",
-        "Staff Monitoring",
-        "Real-Time Performance Tracking",
+        "Dashboard Overview",
+        "Student Mangement",
+        "Admission & Application Management",
+        "Acadmic Management",
+        "Fee & Finance Management",
+        "Communication & Notifications",
+        "Document Management",
+        "Report & Insight",
+        "Data Backup & Recovery"
       ],
       imageUrl: admin,
       id: "admin-panel",
@@ -93,10 +128,14 @@ function Features() {
       description:
         "Wrangle your vendors like a pro. Centralized communication and performance tracking mean better relationships and fewer headaches. Vendors will love you for it (probably).",
       listItems: [
+        "Vendon Onboarding",
+        "Vendo Profile",
+        "Centralized Messaging",
         "Vendor Performance Tracking",
-        "Streamlined Relationships",
-        "Centralized Communication",
-        "Improved Collaboration",
+        "Procurement Mangement",
+        "Payment & Invoice Management",
+        "Analytics & Reporting",
+        "Role Based Access Control"
       ],
       imageUrl: vendor,
       id: "vendor-management-panel",
@@ -106,10 +145,15 @@ function Features() {
       description:
         "Tired of playing detective with documents? Automate the verification process and catch those sneaky fake ones—no magnifying glass needed.",
       listItems: [
-        "Automated Verification",
-        "Secure Document Handling",
-        "Compliance Monitoring",
-        "Authenticity Checks",
+        "Document Upload & Collection",
+        "Document Categorization",
+        "AI Powered Validation",
+        "Notification & Alert",
+        "Document Status Tracking",
+        "Security & Compliance",
+        "Reporting & Analytics",
+        "Multi Language Support",
+        "User Friendly Interface"
       ],
       imageUrl: document,
       id: "document-verification",
@@ -119,10 +163,15 @@ function Features() {
       description:
         "Email? WhatsApp? SMS? Keep your communication chaos-free by managing everything in one place. Schedule, automate, and track like the messaging wizard you are.",
       listItems: [
-        "Centralized Communication",
-        "Multi-Channel Support",
-        "Scheduling & Automation",
-        "Tracking and Reporting",
+        "Centralized Messaging Platform",
+        "Email/SMS Communication ",
+        "Real Time Communication",
+        "Automated Alert & Reminders",
+        "Predefined Communication Templates",
+        "Role Based Access Control",
+        "Mobile Accessibiltiy",
+        "Data Privacy & Security",
+        "Survey & Feedback Management"
       ],
       imageUrl: communication,
       id: "communication-management",
@@ -144,7 +193,7 @@ function Features() {
               {feature.title}
             </h2>
             <p className="text-lg text-gray-600 mt-4">{feature.description}</p>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800">
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-800">
               {feature.listItems.map((item, i) => (
                 <ul key={i} className=" transition-colors duration-300">
                   <li className="flex items-center gap-2">

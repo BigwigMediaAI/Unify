@@ -14,7 +14,7 @@ const StatsSection = () => {
             {/* Stat 1 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            1 <span className="text-2xl">Billion</span>
+            10 <span className="text-2xl">Million +</span>
           </p>
           <p className="mt-2 text-lg">
             Student engagements powered on average annually
@@ -24,7 +24,7 @@ const StatsSection = () => {
         {/* Stat 2 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            5 <span className="text-2xl">Million</span>
+            2 <span className="text-2xl">Lacs +</span>
           </p>
           <p className="mt-2 text-lg">
             Applications managed on average annually
@@ -34,7 +34,7 @@ const StatsSection = () => {
         {/* Stat 3 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            100 <span className="text-2xl">Million</span>
+            2 <span className="text-2xl">Million +</span>
           </p>
           <p className="mt-2 text-lg">
             Inquiries processed on average annually
@@ -44,7 +44,7 @@ const StatsSection = () => {
         {/* Stat 4 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            50,000
+            1000+
           </p>
           <p className="mt-2 text-lg">
             Business users across departments and job functions
@@ -56,7 +56,7 @@ const StatsSection = () => {
         {/* Highlighted Stat */}
         <div className="col-span-1 md:col-span-4 flex md:justify-center md:items-center ">
           <div className="bg-[#172850] rounded-md p-6 w-full md:w-auto md:p-16">
-            <p className="text-3xl font-bold">1000+</p>
+            <p className="text-3xl font-bold">100+</p>
             <p className="mt-2 text-lg">
               Education organizations trust Unify
             </p>

@@ -20,8 +20,9 @@ function Footer() {
           <span className="text-yellow-500 text-2xl font-bold">i</span>
           <span className="text-green-500 text-2xl font-bold">f</span>
           <span className="text-violet-700 text-2xl font-bold">y</span>
-          <p className="text-lg text-gray-400">
-  The ultimate platform for admission management. Simplify your processes and enhance the student enrollment experience with ease.
+          <span className="text-teal-700 text-2xl font-bold">i</span>
+          <p className="text-md text-gray-400 text-justify ">
+  The most preferred platform for leads to admission management. Simplify your processes and enhance the student enrollment experience with ease.
 </p>
           </div>
 
@@ -68,13 +69,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li>
-              <button
-                  className="text-gray-400 hover:text-white"
-                >
-                  blog
-                </button>
-              </li>
+              
               <li>
               <button
                   className="text-gray-400 hover:text-white"
@@ -84,18 +79,13 @@ function Footer() {
               </li>
               <li>
               <button
+              onClick={() => handleScrollToSection('faq')}
                   className="text-gray-400 hover:text-white"
                 >
                   FAQ
                 </button>
               </li>
-              <li>
-              <button
-                  className="text-gray-400 hover:text-white"
-                >
-                  Support
-                </button>
-              </li>
+              
             </ul>
           </div>
           
@@ -104,8 +94,6 @@ function Footer() {
             <h3 className="text-xl font-semibold text-white mb-4">Contact Info</h3>
             <ul className="space-y-2">
               <li className="text-gray-400"><FontAwesomeIcon icon={faEnvelope} className="mr-2" /> info@bigwigmedia.in</li>
-              <li className="text-gray-400">Delhi,India</li>
-              <li className="text-gray-400">+91-11 49 384 555</li>
             </ul>
           </div>
 
