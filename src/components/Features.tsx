@@ -176,6 +176,19 @@ function Features() {
       imageUrl: communication,
       id: "communication-management",
     },
+    {
+      title: "Integration with CRM and Marketing Tools",
+      description:
+        "Sync your favorite tools like peanut butter and jelly. No more switching between tabs like you’re playing whack-a-mole. It’s all in one place, and your sanity thanks you.",
+      listItems: [
+        "CRM Synchronization",
+        "Marketing Tool Integration",
+        "Streamlined Workflow",
+        "Enhanced Collaboration",
+      ],
+      imageUrl: "https://metroguild.com/wp-content/uploads/2023/08/feature-omnichannel-768x502.png",
+      id: "Integration with CRM",
+    }
   ];
   
 
