@@ -19,7 +19,7 @@ const features = [
         "By qualifying and nurturing leads, your sales team can focus on leads with the highest potential, and your business can increase the likelihood of converting them into paying students.",
     },
     {
-      title: "Enhanced customer relationships",
+      title: "Enhanced students relationships",
       description:
         "Lead management, personalized communication, and timely follow-ups enable your business to build strong relationships with students, leading to increased loyalty and retention.",
     },
@@ -31,7 +31,7 @@ const features = [
     {
       title: "Better decision-making",
       description:
-        "Get valuable insights into customer behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
+        "Get valuable insights into students behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
     },
   ];
 
