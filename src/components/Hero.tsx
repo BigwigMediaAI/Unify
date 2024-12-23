@@ -3,7 +3,7 @@ import social from "../assets/Flow.png"
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative flex flex-col lg:flex-row items-center justify-between py-12 px-4 lg:px-24 mt-16">
+    <section id="home" className="relative flex flex-col lg:flex-row items-center justify-between py-12 px-4 md:px-14 mt-16">
       {/* Left Section */}
       <div className="max-w-lg space-y-6 text-center lg:text-left">
   <h4 className="text-blue-500 font-bold text-lg flex items-center justify-center lg:justify-start">
