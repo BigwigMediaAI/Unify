@@ -28,8 +28,8 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-semibold text-white mb-4 text-center">Quick Links</h3>
+            <ul className="space-y-2 text-center">
   <li>
     <button
       onClick={() => handleScrollToSection('home')}
@@ -67,8 +67,8 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-4 text-center">Resources</h3>
+            <ul className="space-y-2 text-center">
               
               <li>
               <button
@@ -92,8 +92,8 @@ function Footer() {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4">Contact Info</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-semibold text-white mb-4 text-center">Contact Info</h3>
+            <ul className="space-y-2 text-center">
               <li className="text-gray-400"><FontAwesomeIcon icon={faEnvelope} className="mr-2" /> info@bigwigmedia.in</li>
             </ul>
           </div>
