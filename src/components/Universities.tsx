@@ -33,17 +33,18 @@ function Universities() {
         </div>
 
         <div className="bg-gradient-to-b from-blue-50 via-gray-100 to-white py-16">
-            <h1 className="text-2xl md:text-3xl font-semibold text-center text-gray-800 leading-tight md:leading-snug px-4">
-                Embrace Enrollment Growth with Unify’s Higher Education Admissions CRM
-            </h1>
-            <p className="text-justify md:text-center text-gray-600 px-8 mt-4 md:mt-6 text-lg md:text-xl md:max-w-6xl mx-auto">
-            Admissions, meet Unify CRM (formerly NoPaperForms), the superhero your higher ed needs! Gone are the days of cobbled-together processes, misplaced applications, and decision-making that felt more like a guessing game. Seriously, who knew admissions could be this disorganized?
-            </p>
-            <p className="text-justify md:text-center text-gray-600 px-8 mt-6 md:mt-10 text-lg md:text-xl md:max-w-6xl mx-auto">
-            Unify swoops in like a caped crusader, turning chaos into calm. It centralizes your inquiries (no more "Who emailed who again?"), automates applications (because manually chasing forms is so last century), customizes post-application workflows (think: your admissions, your way), and turbocharges enrollment with an integrated payment system (less "wait, how do I pay?" and more "where do I sign up?").
-            </p>
-            <img src={crm}alt="" className="mt-10 md:mt-16 mx-auto md:max-w-2xl " />
-        </div>
+    <h1 className="text-2xl md:text-3xl font-semibold text-center text-gray-800 leading-tight md:leading-snug px-4">
+        Conquer Admissions Chaos with Unify CRM – Your Campus’s Secret Weapon
+    </h1>
+    <p className="text-justify md:text-center text-gray-600 px-8 mt-4 md:mt-6 text-lg md:text-xl md:max-w-6xl mx-auto">
+        Imagine your admissions office as a reality TV show: “Survivor: Paper Pile Edition.” Applications scattered everywhere, decisions made via coin tosses, and inquiries lost in the void like socks in the dryer. Enter Unify CRM to save the day – and your sanity.
+    </p>
+    <p className="text-justify md:text-center text-gray-600 px-8 mt-6 md:mt-10 text-lg md:text-xl md:max-w-6xl mx-auto">
+        Unify is like the admissions equivalent of having your favorite professor hand out open-book exams. It organizes inquiries (so you’re not sending emails into the abyss), automates applications (bye-bye, form-chasing marathons), and customizes workflows (because cookie-cutter solutions are so passé). Oh, and it handles payments like a pro – no more awkward “how do I pay?” moments, just happy students shouting, “Take my money already!”
+    </p>
+    <img src={crm} alt="" className="mt-10 md:mt-16 mx-auto md:max-w-2xl " />
+</div>
+
 
         </div>
     );
