@@ -13,7 +13,7 @@ function Features() {
     {
       title: "Admission Management",
       description:
-        "Turn your chaotic admission process into a well-oiled machine. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more \"Who dropped the ball?\" moments.",
+        "Turn your chaotic admission process into a well-oiled SaaS. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more \"Who dropped the ball?\" moments.",
       listItems: [
         "Real-Time Updates",
         "Centralized Database",
@@ -126,10 +126,10 @@ function Features() {
     {
       title: "Vendor Management Panel",
       description:
-        "Wrangle your vendors like a pro. Centralized communication and performance tracking mean better relationships and fewer headaches. Vendors will love you for it (probably).",
+        "Wrangle your vendors like a pro. Centralized communication and performance tracking mean better relationships and fewer headaches. Vendors will love you for it.",
       listItems: [
-        "Vendon Onboarding",
-        "Vendo Profile",
+        "Vendor Onboarding",
+        "Vendor Profile",
         "Centralized Messaging",
         "Vendor Performance Tracking",
         "Procurement Mangement",

@@ -111,7 +111,7 @@ function Footer() {
 
         {/* Footer Bottom */}
         <div className="mt-12 text-center text-gray-400">
-          <p>&copy; 2024 Bigwig Media. All rights reserved.</p>
+          <p>&copy; 2025 Bigwig Media. All rights reserved.</p>
         </div>
       </div>
     </div>

@@ -86,9 +86,6 @@ const ImageSlider: React.FC = () => {
                 </p>
                 <div>
                   <p className="font-semibold text-gray-800">{testimonial.name}</p>
-                  <p className="text-gray-500">
-                    {testimonial.role}, {testimonial.company}
-                  </p>
                 </div>
               </div>
             ))}

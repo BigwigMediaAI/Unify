@@ -26,7 +26,7 @@ const features = [
     {
       title: "Increased efficiency",
       description:
-        "Automating lead management processes can help streamline your sales operations, reduce manual errors, and increase productivity.",
+        "Automating lead management processes with the help of AI can help streamline your sales operations, reduce manual errors, and increase productivity.",
     },
     {
       title: "Better decision-making",
