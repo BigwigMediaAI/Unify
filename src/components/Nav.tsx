@@ -16,6 +16,7 @@ function Nav() {
     { name: "Vendor Management Panel", id: "vendor-management-panel" },
     { name: "Document Verification", id: "document-verification" },
     { name: "Communication Management", id: "communication-management" },
+    { name: "Integration with CRM", id: "Integration with CRM" },
   ];
 
   const navigate = useNavigate();
