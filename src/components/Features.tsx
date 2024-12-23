@@ -111,9 +111,9 @@ function Features() {
         "Calling all admins! Run your institution like a boss with a panel that does it all—reports, staff monitoring, and admissions. It’s basically your command center.",
       listItems: [
         "Dashboard Overview",
-        "Student Mangement",
-        "Admission & Application Management",
-        "Acadmic Management",
+        "Access Controls",
+        "Data Downloads",
+        "Academic Management",
         "Fee & Finance Management",
         "Communication & Notifications",
         "Document Management",
