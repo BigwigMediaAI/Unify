@@ -21,6 +21,7 @@ const Team: React.FC = () => {
           <p className="text-gray-600 text-center">
           Vipul Dutta, the all-star of tech entrepreneurship and the Mastermind-in-Chief over at Bigwig Media Group of Companies. With a legendary 23-year run in the high-stakes world of Digital Marketing and Advertising, he's practically royalty in the industry. No kidding! His majestic career is littered with illustrious roles like 'Director of Adglobal360- Hakahodo (Japan),' 'Lord High Director of Pensa Media - a Google Partner Company (India),' and 'Supreme Leader at PBL/ACP Media (New Zealand).' Not just content being one of the pioneer in digital marketing, he's got a serious crush on AI and is hell-bent on spearheading the next wave of innovative firepower in the digital market landscape.
           </p>
+          <h2 className="text-gray-700 text-center font-bold mt-5 text-2xl"> About Unifyi</h2>
           <h2 className="text-gray-600 text-center mt-4">
           Step up, folks, and prepare to be amazed by the spectacle that is Unifyi! Picture it: An AI-fuelled, SAAS platform that acts as a one-stop-shop for managing leads through the maze-like hilarity that is the universities and institutions admission process. Think of Unifyi as your ticket to the roller coaster ride of lead capture, nurturing, and conversion into admissions, all without losing your hair (or your sanity).
           </h2>
