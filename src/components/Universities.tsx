@@ -10,7 +10,7 @@ import global from "../assets/universities/global.webp";
 import lpu from "../assets/universities/Lovely-Professional-University-Logo.webp";
 import spjain from "../assets/universities/sp jain.webp";
 import xlri from "../assets/universities/XLRI.webp";
-import crm from "../assets/CRM-Funnel-Updated-02.webp";
+import crm from "../assets/Admission.svg";
 
 const features = [
     {
