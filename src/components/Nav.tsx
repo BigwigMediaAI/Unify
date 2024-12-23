@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +18,8 @@ function Nav() {
     { name: "Communication Management", id: "communication-management" },
   ];
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -28,17 +31,24 @@ function Nav() {
     };
   }, []);
 
-  const handleScrollToSection = (id:any) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -70; // Adjust this value for the desired offset
-      const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: yPosition, behavior: "smooth" });
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // Navigate to the landing page and scroll to the section
+      navigate('/', { state: { sectionId } });
+    } else {
+      // Scroll to the section directly if already on the landing page
+      scrollToSection(sectionId);
     }
-    setIsDropdownOpen(false); // Close dropdown after clicking
-    setIsOpen(false)
   };
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -70; // Adjust for navbar height
+      const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: yPosition, behavior: 'smooth' });
+    }
+  };
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
@@ -76,7 +86,7 @@ function Nav() {
         </button>
 
         <div className="hidden md:flex gap-8 space-x-6 text-gray-600 font-bold">
-          <button onClick={() => handleScrollToSection('home')} className="hover:text-black">
+          <button onClick={() => handleNavigation('home')} className="hover:text-black">
             Home
           </button>
           <div
@@ -112,7 +122,7 @@ function Nav() {
       {features.map((feature, index) => (
         <button
           key={index}
-          onClick={() => handleScrollToSection(feature.id)}
+          onClick={() => handleNavigation(feature.id)}
           className="text-gray-600 hover:text-black text-sm"
         >
           {feature.name}
@@ -122,17 +132,21 @@ function Nav() {
   )}
 </div>
 
-          <button onClick={() => handleScrollToSection('about')} className="hover:text-black">
+          <button onClick={() => handleNavigation('about')} className="hover:text-black">
             About Us
           </button>
-          <button onClick={() => handleScrollToSection('blog')} className="hover:text-black">
+          <button onClick={() => handleNavigation('blogs')} className="hover:text-black">
             Blogs
+          </button>
+          <button className="hover:text-black">
+
+            <Link to="/team">Teams</Link>
           </button>
         </div>
 
         <div className="md:block hidden">
           <button
-            onClick={() => handleScrollToSection('faq')}
+            onClick={() => handleNavigation('faq')}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded focus:outline-none"
           >
             FAQ
@@ -147,20 +161,23 @@ function Nav() {
 
       {isOpen && (
         <div className="absolute top-14 right-0 bg-white shadow-lg rounded-md p-4 flex flex-col space-y-4 z-50 h-[30vh] w-full max-w-md">
-          <button onClick={() => handleScrollToSection('home')} className="hover:text-black">
+          <button onClick={() => handleNavigation('home')} className="hover:text-black">
             Home
           </button>
-          <button onClick={() => handleScrollToSection('features')} className="hover:text-black">
+          <button onClick={() => handleNavigation('features')} className="hover:text-black">
             Features
           </button>
-          <button onClick={() => handleScrollToSection('about')} className="hover:text-black">
+          <button onClick={() => handleNavigation('about')} className="hover:text-black">
             About Us
           </button>
-          <button onClick={() => handleScrollToSection('blog')} className="hover:text-black">
+          <button onClick={() => handleNavigation('blogs')} className="hover:text-black">
             Blogs
           </button>
+          <button className="hover:text-black">
+            Teams
+          </button>
           <button
-            onClick={() => handleScrollToSection('faq')}
+            onClick={() => handleNavigation('faq')}
             className="w-1/2 mx-auto block text-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg focus:outline-none text-lg sm:text-xl shadow-md"
           >
             FAQ
