@@ -25,9 +25,10 @@ const ContactUs: React.FC = () => {
   };
 
   const validatePhone = (phone: string): boolean => {
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // E.164 format or simple numeric check
+    const phoneRegex = /^\d{10}$/; // Matches exactly 10 digits
     return phoneRegex.test(phone);
   };
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
