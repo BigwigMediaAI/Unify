@@ -75,7 +75,7 @@ function Nav() {
           </svg>
         </button>
 
-        <div className="hidden md:flex gap-8 space-x-6 text-gray-600">
+        <div className="hidden md:flex gap-8 space-x-6 text-gray-600 font-bold">
           <button onClick={() => handleScrollToSection('home')} className="hover:text-black">
             Home
           </button>
