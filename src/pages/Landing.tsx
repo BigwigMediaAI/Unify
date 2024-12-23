@@ -11,6 +11,7 @@ import Blog from "../components/Blog";
 import { FaRegMessage } from "react-icons/fa6";
 import ContactUs from "../components/Contact";
 import ImageSlider from "../components/Testimonial";
+import Team from "../components/Team";
 
 
 
@@ -54,6 +55,7 @@ function Landing() {
             <StatsSection/>
             <Features/>
             <ImageSlider/>
+            <Team/>
             <AboutUs/>
             <Blog/>
             <FAQ/>
