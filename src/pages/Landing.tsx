@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Blog from "../components/Blog";
 import { FaRegMessage } from "react-icons/fa6";
 import ContactUs from "../components/Contact";
+import ImageSlider from "../components/Testimonial";
 
 
 
@@ -52,6 +53,7 @@ function Landing() {
             <Universities/>
             <StatsSection/>
             <Features/>
+            <ImageSlider/>
             <AboutUs/>
             <Blog/>
             <FAQ/>

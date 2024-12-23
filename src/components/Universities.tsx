@@ -40,7 +40,7 @@ function Universities() {
     return (
         <div>
 
-        <h1 className="mt-12 md:mt-20 text-2xl md:text-3xl font-bold text-center text-gray-700">UNIFYI - Breathing Life into Admission Management</h1>
+        <h1 className="mt-12 md:mt-20 text-3xl font-semibold text-gray-900 mb-8 text-center">UNIFYI - Breathing Life into Admission Management</h1>
         <div className="grid grid-cols-2 md:grid-cols-6 p-8 md:p-14 gap-10">
             <img src={jaipur} alt="" />
             <img src={srm} alt="" />
@@ -61,7 +61,7 @@ function Universities() {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg p-6 text-justify"
+            className="bg-white shadow-md rounded-lg p-6 text-left"
           >
             <div className="text-white bg-green-400 w-fit px-2 rounded-full text-lg mb-4">✓</div>
             <h3 className="font-semibold text-lg text-gray-900 mb-2">

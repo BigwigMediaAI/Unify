@@ -2,12 +2,13 @@ import about from "../assets/ABOUT.png"
 const AboutUs = () => {
   return (
     <section id="about" className=" py-16 px-8 md:px-14 lg:px-20">
+      <h2 className="text-3xl font-semibold text-gray-900 mb-4 text-center">
+            About Us
+          </h2>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Content */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
-            About Us
-          </h2>
+        
           <p className="text-md text-gray-600 mt-4 text-justify">
           Ever wondered what you'd get if you crossed a digital advertising agency with Artificial Intelligence & Machine learning technology? Well, stop racking your brain cells! The answer is BIGWIG MEDIA, an AI & ML infused, pow-bam-slammingly amazing digital advertising agency that's breaking the internet!
           </p>

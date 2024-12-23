@@ -3,7 +3,7 @@
 const StatsSection = () => {
   return (
     <div>
-    <h2 className="text-2xl md:text-3xl font-semibold mb-8 px-5 md:text-center">
+    <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">
         We are a global enrollment platform designed to equip you for growth
       </h2> 
     <div className="bg-[#0c1c40] text-white py-8 px-5 max-w-6xl mx-auto rounded-lg">
@@ -14,7 +14,7 @@ const StatsSection = () => {
             {/* Stat 1 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            10 <span className="text-2xl">Million +</span>
+            20 <span className="text-2xl">Million +</span>
           </p>
           <p className="mt-2 text-lg">
             Student engagements powered on average annually
@@ -24,7 +24,7 @@ const StatsSection = () => {
         {/* Stat 2 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            2 <span className="text-2xl">Lacs +</span>
+            4 <span className="text-2xl">Lacs +</span>
           </p>
           <p className="mt-2 text-lg">
             Applications managed on average annually
@@ -34,7 +34,7 @@ const StatsSection = () => {
         {/* Stat 3 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            2 <span className="text-2xl">Million +</span>
+            4 <span className="text-2xl">Million +</span>
           </p>
           <p className="mt-2 text-lg">
             Inquiries processed on average annually
@@ -44,7 +44,7 @@ const StatsSection = () => {
         {/* Stat 4 */}
         <div className="flex flex-col md:text-left">
           <p className="text-3xl font-bold">
-            1000+
+            2000+
           </p>
           <p className="mt-2 text-lg">
             Business users across departments and job functions

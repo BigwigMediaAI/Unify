@@ -72,6 +72,7 @@ function Footer() {
               
               <li>
               <button
+              onClick={() => handleScrollToSection('case')}
                   className="text-gray-400 hover:text-white"
                 >
                   Case Studies
