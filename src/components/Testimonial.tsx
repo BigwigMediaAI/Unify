@@ -10,28 +10,28 @@ const testimonials = [
     name: "Emily Carter",
     role: "Business Owner",
     company: "Cafe Delight",
-    text: "BigwigORM helped us respond to reviews quickly and improved our online reputation. Our rating went from 4.0 to 4.8 stars in just 2 months!",
+    text: "Unifyi transformed the way we handle student inquiries. With its efficient lead tracking and communication tools, we've seen a 30% increase in student enrollments in just 2 months!",
     image: "https://randomuser.me/api/portraits/women/3.jpg", // Image 1
   },
   {
-    name: "Michael Brown",
+    name: "Arjun Dixit",
     role: "Operations Manager",
     company: "Urban Stay Hotels",
-    text: "Managing reviews across platforms was overwhelming until we started using BigwigORM. It saved us hours every week and boosted customer trust.",
+    text: "Before using Unifyi, we struggled with managing the influx of student inquiries. Now, we can easily follow up with prospective students, resulting in more conversions and better engagement.",
     image: "https://randomuser.me/api/portraits/men/5.jpg", // Image 2
   },
   {
     name: "Sophia Martinez",
     role: "Head of Marketing",
     company: "RetailX",
-    text: "The analytics and sentiment analysis gave us deep insights into customer feedback. It’s a must-have tool for businesses serious about their reputation.",
+    text: "The real-time analytics and student sentiment analysis from Unifyi have been game changers. We’ve gained valuable insights into prospective student needs, improving our overall enrollment",
     image: "https://randomuser.me/api/portraits/women/4.jpg", // Image 3
   },
   {
     name: "James Wilson",
     role: "Community Manager",
     company: "Local Eats",
-    text: "With automated review requests, we’ve collected more positive reviews than ever before. Our business has seen noticeable growth!",
+    text: "Automated follow-ups and personalized messaging have made our student lead management more streamlined than ever. We've experienced significant growth in student enrollments this year.",
     image: "https://randomuser.me/api/portraits/men/8.jpg", // Image 4
   },
 ];
