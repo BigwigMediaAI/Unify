@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   <p className="text-gray-600 leading-relaxed">
     From admissions to vendor management, Unify offers an all-in-one platform that transforms your institution into an efficient and transparent powerhouse. Simplify workflows, enhance communication, and manage everything seamlessly.
   </p>
- 
+    
 </div>
 
 
