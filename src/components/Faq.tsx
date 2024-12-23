@@ -36,12 +36,7 @@ function FAQ() {
       question: "Does Unify offer analytics features?",
       answer:
         "Yes, Unify provides in-depth analytics to track admissions metrics, monitor progress, and make data-driven decisions.",
-    },
-    {
-      question: "How do I get started with Unify?",
-      answer:
-        "Getting started is simple. Schedule a demo with us, and we’ll guide you through the onboarding process step by step.",
-    },
+    }
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
