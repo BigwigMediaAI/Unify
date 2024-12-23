@@ -1,5 +1,5 @@
 import React from "react";
-import social from "../assets/img-bulk-publishing.png"
+import social from "../assets/Flow.png"
 
 const Hero: React.FC = () => {
   return (
