@@ -1,0 +1,28 @@
+/* Slick Carousel styles */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 28px;  /* Adjusted border-radius for smaller switch */
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;  /* Reduced height */
+    width: 18px;   /* Reduced width */
+    left: 3px;  /* Adjusted to center the knob within the switch */
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
