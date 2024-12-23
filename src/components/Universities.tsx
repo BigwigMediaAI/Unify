@@ -26,7 +26,7 @@ const features = [
     {
       title: "Increased efficiency",
       description:
-        "Automating lead management processes with the help of AI can help streamline your sales operations, reduce manual errors, and increase productivity.",
+        "Automating lead management processes with the help of AI, can help streamline your sales operations, reduce manual errors, and increase productivity.",
     },
     {
       title: "Better decision-making",
@@ -40,7 +40,7 @@ function Universities() {
     return (
         <div>
 
-        <h1 className="mt-12 md:mt-20 text-3xl font-semibold text-gray-900 mb-8 text-center">UNIFYI - Breathing Life into Admission Management</h1>
+        <h1 className="mt-12 md:mt-20 text-3xl font-semibold text-gray-900 mb-8 text-center"><span className="text-blue-500">UNIFYI</span>- Breathing Life into Admission Management</h1>
         <div className="grid grid-cols-2 md:grid-cols-6 p-8 md:p-14 gap-10">
             <img src={jaipur} alt="" />
             <img src={srm} alt="" />

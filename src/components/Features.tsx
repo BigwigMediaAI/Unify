@@ -13,7 +13,7 @@ function Features() {
     {
       title: "Admission Management",
       description:
-        "Turn your chaotic admission process into a well-oiled SaaS. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more \"Who dropped the ball?\" moments.",
+        "Turn your chaotic admission process into a well-oiled SaaS platform. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more \"Who dropped the ball?\" moments.",
       listItems: [
         "Real-Time Updates",
         "Centralized Database",
