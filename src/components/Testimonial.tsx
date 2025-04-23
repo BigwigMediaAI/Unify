@@ -66,39 +66,64 @@ const ImageSlider: React.FC = () => {
 
   return (
     <section id="case" className="bg-black text-white mb-10">
-      <div className="w-11/12 mx-auto px-6 text-center py-4">
+      <div className="w-11/12 mx-auto px-2 text-center py-4">
         <h2 className="text-5xl font-semibold mb-8">
           What Our Partners Are Saying
         </h2>
-
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="px-4">
-              {" "}
-              {/* Add horizontal gap */}
-              <div className="p-6 rounded-lg bg-gray-800 h-[420px] flex flex-col justify-between">
-                <div>
-                  <div className="flex justify-center mb-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="rounded-full w-24 h-24 object-cover border-4 border-white"
-                    />
-                  </div>
-                  <p className="text-lg italic mb-4 text-gray-200">
-                    "{testimonial.text}"
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-400">
-                    {testimonial.role}, {testimonial.company}
-                  </p>
-                </div>
+        <div className="flex flex-col md:flex-row items-center gap-6 mt-5">
+          <div className="md:w-1/4 text-center md:text-left">
+            <h2 className="text-2xl font-semibold text-gray-100">
+              CLIENT TESTIMONIALS
+            </h2>
+            <div className="flex items-center gap-2 mt-2 justify-center md:justify-start">
+              <div className="rounded-full p-2 text-gray-100 text-xl font-bold">
+                <img
+                  src="https://www.svgrepo.com/show/475656/google-color.svg"
+                  alt=""
+                  className="w-8"
+                />
+              </div>
+              <div>
+                <p className="font-bold text-lg text-gray-100">Rated 4.8/5</p>
+                <p className="text-gray-400 text-sm">250+ Google Reviews</p>
               </div>
             </div>
-          ))}
-        </Slider>
+            <p className="text-gray-400 mt-4">
+              Don't just take our word for it. Here's what our clients have to
+              say about their Unique experience.
+            </p>
+          </div>
+          <div className="md:w-3/4 w-full">
+            <Slider {...settings}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="px-4">
+                  {" "}
+                  {/* Add horizontal gap */}
+                  <div className="p-6 rounded-lg bg-gray-800 h-[420px] flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-center mb-4">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="rounded-full w-20 h-20 object-cover border-4 border-white"
+                        />
+                      </div>
+                      <p className="text-md italic mb-4 text-gray-200">
+                        "{testimonial.text}"
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="text-sm text-gray-400">
+                        {testimonial.role}, {testimonial.company}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,15 +1,15 @@
-import jaipur from "../assets/universities/jaipur.webp";
-import srm from "../assets/universities/SRM.webp";
-import imi from "../assets/universities/imi.webp";
-import nims from "../assets/universities/nims.webp";
-import anant from "../assets/universities/anant.webp";
-import auro from "../assets/universities/auro.webp";
-import galgotias from "../assets/universities/Galgotias-1.webp";
-import gandhi from "../assets/universities/gandhi.webp";
-import global from "../assets/universities/global.webp";
-import lpu from "../assets/universities/Lovely-Professional-University-Logo.webp";
-import spjain from "../assets/universities/sp jain.webp";
-import xlri from "../assets/universities/XLRI.webp";
+// import jaipur from "../assets/universities/jaipur.webp";
+// import srm from "../assets/universities/SRM.webp";
+// import imi from "../assets/universities/imi.webp";
+// import nims from "../assets/universities/nims.webp";
+// import anant from "../assets/universities/anant.webp";
+// import auro from "../assets/universities/auro.webp";
+// import galgotias from "../assets/universities/Galgotias-1.webp";
+// import gandhi from "../assets/universities/gandhi.webp";
+// import global from "../assets/universities/global.webp";
+// import lpu from "../assets/universities/Lovely-Professional-University-Logo.webp";
+// import spjain from "../assets/universities/sp jain.webp";
+// import xlri from "../assets/universities/XLRI.webp";
 import crm from "../assets/Admission.svg";
 
 const features = [
@@ -37,13 +37,13 @@ const features = [
 
 function Universities() {
   return (
-    <div className="bg-black text-white">
-      <h1 className="text-4xl font-semibold mb-10 text-center py-5">
+    <div className="bg-black text-white mb-10 py-5">
+      <h1 className="text-4xl font-semibold  text-center mb-10 ">
         <span className="text-blue-400 font-bold">UNIFYI</span> - Breathing Life
         into Admission Management
       </h1>
 
-      <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-6 gap-10">
+      {/* <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-6 gap-10">
         <img src={jaipur} alt="" />
         <img src={srm} alt="" />
         <img src={imi} alt="" />
@@ -56,9 +56,9 @@ function Universities() {
         <img src={anant} alt="" />
         <img src={lpu} alt="" />
         <img src={galgotias} alt="" />
-      </div>
+      </div> */}
 
-      <div className="py-16">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-11/12 mx-auto px-5">
           {features.map((feature, index) => (
             <div

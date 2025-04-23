@@ -21,7 +21,7 @@ const Blog = () => {
     AOS.init({
       duration: 1200,
       once: false,
-      mirror: false,
+      mirror: true,
       easing: "ease-in-out",
     });
 
