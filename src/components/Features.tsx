@@ -193,43 +193,47 @@ function Features() {
   ];
 
   return (
-    <div id="features" className="w-11/12 mx-auto mb-10">
-      <h2 className="text-5xl font-bold text-white mb-4 text-center py-4">
+    <div id="features" className="w-full px-4 md:px-12 py-10 bg-black">
+      <h2 className="text-5xl font-bold text-white text-center mb-12">
         Services
       </h2>
-      {featureData.map((feature, index) => (
-        <div
-          key={index}
-          id={feature.id}
-          className={` grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:gap-8 mt-${index === 0 ? 0 : 16} mt-10`}
-        >
-          {/* Feature */}
-          <div className={index % 2 === 0 ? "" : "order-1 md:order-2"}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight transition-colors duration-300">
-              {feature.title}
-            </h2>
-            <p className="text-lg text-gray-200 mt-4">{feature.description}</p>
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
-              {feature.listItems.map((item, i) => (
-                <ul key={i} className=" transition-colors duration-300">
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-500 text-xl">✔</span> {item}
+
+      <div className="flex flex-col gap-24">
+        {featureData.map((feature, index) => (
+          <div
+            key={index}
+            id={feature.id}
+            className={`flex flex-col md:flex-row ${
+              index % 2 !== 0 ? "md:flex-row-reverse" : ""
+            } items-center justify-between gap-8`}
+          >
+            {/* Text Section */}
+            <div className="w-full md:w-1/2 max-w-2xl">
+              <h3 className="text-3xl md:text-4xl font-bold text-white">
+                {feature.title}
+              </h3>
+              <p className="text-gray-200 mt-4">{feature.description}</p>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 text-gray-300">
+                {feature.listItems.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-blue-500 text-xl">✔</span>
+                    {item}
                   </li>
-                </ul>
-              ))}
+                ))}
+              </ul>
+            </div>
+
+            {/* Image */}
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+              <img
+                src={feature.imageUrl}
+                alt={feature.title}
+                className="w-80 md:w-96 max-w-full"
+              />
             </div>
           </div>
-
-          {/* Image */}
-          <div className="flex justify-center mb-10 md:mb-4 order-2 md:order-1">
-            <img
-              src={feature.imageUrl}
-              alt={feature.title}
-              className="w-96 max-w-md md:max-w-lg transition-transform duration-300"
-            />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
