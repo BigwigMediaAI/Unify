@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
         <img
           src={social}
           alt="Happy User"
-          className="w-60 mx-auto md:w-full object-cover"
+          className="w-full mx-auto md:w-full object-cover"
         />
       </div>
 
