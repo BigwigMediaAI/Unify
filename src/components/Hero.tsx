@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col lg:flex-row items-center justify-between py-12 px-4 md:px-14 mt-10 bg-black"
+      className="relative flex flex-col lg:flex-row items-center justify-between pt-24 py-12 px-4 md:px-14 mt-10 bg-black"
     >
       {/* Left Section */}
       <div className="w-11/12 mx-auto mb-10 space-y-5 text-center lg:text-left">
