@@ -38,12 +38,12 @@ const features = [
 function Universities() {
   return (
     <div className="bg-black text-white">
-      <h1 className="mt-12 md:mt-20 text-3xl font-semibold mb-8 text-center">
+      <h1 className="text-4xl font-semibold mb-10 text-center py-5">
         <span className="text-blue-400 font-bold">UNIFYI</span> - Breathing Life
         into Admission Management
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-6 p-8 md:p-14 gap-10">
+      <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-6 gap-10">
         <img src={jaipur} alt="" />
         <img src={srm} alt="" />
         <img src={imi} alt="" />
@@ -58,8 +58,8 @@ function Universities() {
         <img src={galgotias} alt="" />
       </div>
 
-      <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-5">
+      <div className="py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-11/12 mx-auto px-5">
           {features.map((feature, index) => (
             <div
               key={index}

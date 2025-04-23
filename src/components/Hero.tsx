@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import social from "../assets/Lead management.svg";
+import social from "../assets/unify.png";
 import ContactUs from "./Contact";
 
 const Hero: React.FC = () => {
@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       className="relative flex flex-col lg:flex-row items-center justify-between py-12 px-4 md:px-14 mt-10 bg-black"
     >
       {/* Left Section */}
-      <div className="max-w-lg space-y-5 text-center lg:text-left">
+      <div className="w-11/12 mx-auto mb-10 space-y-5 text-center lg:text-left">
         <h4 className="text-blue-400 font-bold text-lg flex items-center justify-center lg:justify-start">
           Empowering Educational Institutions & Universities
           <span className="ml-1 text-blue-400">🎓</span>

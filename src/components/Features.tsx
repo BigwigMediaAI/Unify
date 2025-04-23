@@ -1,4 +1,4 @@
-import admission from '../assets/features/admission5.webp';
+import admission from "../assets/features/admission5.webp";
 import application from "../assets/features/paidApplication.webp";
 import lead from "../assets/features/lead-management.webp";
 import conselor from "../assets/features/counselor.webp";
@@ -6,14 +6,14 @@ import student from "../assets/features/student panel.webp";
 import admin from "../assets/features/admin panel.webp";
 import vendor from "../assets/features/vendor.webp";
 import document from "../assets/features/document (1).webp";
-import communication from '../assets/features/communication.webp';
+import communication from "../assets/features/communication.webp";
 
 function Features() {
   const featureData = [
     {
       title: "Admission Management",
       description:
-        "Turn your chaotic admission process into a well-oiled SaaS platform. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more \"Who dropped the ball?\" moments.",
+        'Turn your chaotic admission process into a well-oiled SaaS platform. From applications to enrollments, centralize data and keep everyone in the loop with real-time updates—no more "Who dropped the ball?" moments.',
       listItems: [
         "Real-Time Updates",
         "Centralized Database",
@@ -23,7 +23,7 @@ function Features() {
         "Reporting & Analytics",
         "Integration With External System",
         "Compliance & Security",
-        "Document Management"
+        "Document Management",
       ],
       imageUrl: admission,
       id: "admission-management",
@@ -43,7 +43,7 @@ function Features() {
         "Secure Document Upload",
         "Multilingual & Multicurrency Support",
         "Refund & Dispute Management",
-        "Fraud Prevention & Security"
+        "Fraud Prevention & Security",
       ],
       imageUrl: application,
       id: "paid-application-management",
@@ -64,7 +64,7 @@ function Features() {
         "Event Management",
         "Integration With Social Media",
         "Notification & Reminders",
-        "Scalibility & Flexibilty"
+        "Scalibility & Flexibilty",
       ],
       imageUrl: lead,
       id: "lead-management",
@@ -82,7 +82,7 @@ function Features() {
         "Performance Analytics",
         "Customizable Workflows",
         "Secure Document Handling",
-        "Data Security & Compliance"
+        "Data Security & Compliance",
       ],
       imageUrl: conselor,
       id: "counselor-management",
@@ -100,7 +100,7 @@ function Features() {
         "Feedback & Surveys",
         "Student Support Service",
         "Event & Activities",
-        "Mobile Accessibility"
+        "Mobile Accessibility",
       ],
       imageUrl: student,
       id: "student-panel",
@@ -118,7 +118,7 @@ function Features() {
         "Communication & Notifications",
         "Document Management",
         "Report & Insight",
-        "Data Backup & Recovery"
+        "Data Backup & Recovery",
       ],
       imageUrl: admin,
       id: "admin-panel",
@@ -135,7 +135,7 @@ function Features() {
         "Procurement Mangement",
         "Payment & Invoice Management",
         "Analytics & Reporting",
-        "Role Based Access Control"
+        "Role Based Access Control",
       ],
       imageUrl: vendor,
       id: "vendor-management-panel",
@@ -153,7 +153,7 @@ function Features() {
         "Security & Compliance",
         "Reporting & Analytics",
         "Multi Language Support",
-        "User Friendly Interface"
+        "User Friendly Interface",
       ],
       imageUrl: document,
       id: "document-verification",
@@ -171,7 +171,7 @@ function Features() {
         "Role Based Access Control",
         "Mobile Accessibiltiy",
         "Data Privacy & Security",
-        "Survey & Feedback Management"
+        "Survey & Feedback Management",
       ],
       imageUrl: communication,
       id: "communication-management",
@@ -186,27 +186,30 @@ function Features() {
         "Streamlined Workflow",
         "Enhanced Collaboration",
       ],
-      imageUrl: "https://metroguild.com/wp-content/uploads/2023/08/feature-omnichannel-768x502.png",
+      imageUrl:
+        "https://metroguild.com/wp-content/uploads/2023/08/feature-omnichannel-768x502.png",
       id: "Integration with CRM",
-    }
+    },
   ];
-  
 
   return (
-    <div id="features" className="py-16 px-8 sm:px-12">
+    <div id="features" className="w-11/12 mx-auto mb-10">
+      <h2 className="text-5xl font-bold text-white mb-4 text-center py-4">
+        Services
+      </h2>
       {featureData.map((feature, index) => (
         <div
           key={index}
           id={feature.id}
-          className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:gap-8 mt-${index === 0 ? 0 : 16} mt-10`}
+          className={` grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:gap-8 mt-${index === 0 ? 0 : 16} mt-10`}
         >
           {/* Feature */}
           <div className={index % 2 === 0 ? "" : "order-1 md:order-2"}>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight transition-colors duration-300">
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight transition-colors duration-300">
               {feature.title}
             </h2>
-            <p className="text-lg text-gray-600 mt-4">{feature.description}</p>
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-800">
+            <p className="text-lg text-gray-200 mt-4">{feature.description}</p>
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-300">
               {feature.listItems.map((item, i) => (
                 <ul key={i} className=" transition-colors duration-300">
                   <li className="flex items-center gap-2">

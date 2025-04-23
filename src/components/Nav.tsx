@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const features = [
     { name: "Admission Management", id: "admission-management" },
@@ -42,7 +44,7 @@ function Nav() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-[#2c2c2c] shadow-md shadow-gray-400" : "bg-[#212121]"
+        isScrolled ? "bg-black shadow-md shadow-gray-400" : "bg-black"
       }`}
     >
       <div className="flex items-center justify-between p-4 md:px-10 relative">
@@ -137,6 +139,12 @@ function Nav() {
             Blogs
           </button>
           <button
+            onClick={() => handleScrollToSection("faq")}
+            className="hover:text-gray-300"
+          >
+            FAQ
+          </button>
+          <button
             onClick={() => window.open("/team", "_blank")}
             className="hover:text-gray-300"
           >
@@ -146,10 +154,10 @@ function Nav() {
 
         <div className="md:block hidden">
           <button
-            onClick={() => handleScrollToSection("faq")}
+            onClick={() => navigate("/contact")}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded focus:outline-none"
           >
-            FAQ
+            Contact Us
           </button>
         </div>
       </div>
@@ -185,16 +193,22 @@ function Nav() {
             Blogs
           </button>
           <button
+            onClick={() => handleScrollToSection("blog")}
+            className="hover:text-gray-300"
+          >
+            FAQ
+          </button>
+          <button
             onClick={() => window.open("/team", "_blank")}
             className="hover:text-gray-300"
           >
             Team
           </button>
           <button
-            onClick={() => handleScrollToSection("faq")}
+            onClick={() => navigate("/contact")}
             className="w-1/2 mx-auto block text-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg focus:outline-none text-lg sm:text-xl shadow-md"
           >
-            FAQ
+            Contact Us
           </button>
         </div>
       )}
