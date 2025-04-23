@@ -13,71 +13,73 @@ import xlri from "../assets/universities/XLRI.webp";
 import crm from "../assets/Admission.svg";
 
 const features = [
-    {
-      title: "Improved conversion rates",
-      description:
-        "By qualifying and nurturing leads, your sales team can focus on leads with the highest potential, and your business can increase the likelihood of converting them into paying students.",
-    },
-    {
-      title: "Enhanced students relationships",
-      description:
-        "Lead management, personalized communication, and timely follow-ups enable your business to build strong relationships with students, leading to increased loyalty and retention.",
-    },
-    {
-      title: "Increased efficiency",
-      description:
-        "Automating lead management processes with the help of AI, can help streamline your sales operations, reduce manual errors, and increase productivity.",
-    },
-    {
-      title: "Better decision-making",
-      description:
-        "Get valuable insights into students behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
-    },
-  ];
-
+  {
+    title: "Improved conversion rates",
+    description:
+      "By qualifying and nurturing leads, your sales team can focus on leads with the highest potential, and your business can increase the likelihood of converting them into paying students.",
+  },
+  {
+    title: "Enhanced students relationships",
+    description:
+      "Lead management, personalized communication, and timely follow-ups enable your business to build strong relationships with students, leading to increased loyalty and retention.",
+  },
+  {
+    title: "Increased efficiency",
+    description:
+      "Automating lead management processes with the help of AI, can help streamline your sales operations, reduce manual errors, and increase productivity.",
+  },
+  {
+    title: "Better decision-making",
+    description:
+      "Get valuable insights into students behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
+  },
+];
 
 function Universities() {
-    return (
-        <div>
+  return (
+    <div className="bg-black text-white">
+      <h1 className="mt-12 md:mt-20 text-3xl font-semibold mb-8 text-center">
+        <span className="text-blue-400 font-bold">UNIFYI</span> - Breathing Life
+        into Admission Management
+      </h1>
 
-        <h1 className="mt-12 md:mt-20 text-3xl font-semibold text-gray-900 mb-8 text-center"><span className="text-blue-500 font-bold">UNIFYI</span>- Breathing Life into Admission Management</h1>
-        <div className="grid grid-cols-2 md:grid-cols-6 p-8 md:p-14 gap-10">
-            <img src={jaipur} alt="" />
-            <img src={srm} alt="" />
-            <img src={imi} alt="" />
-            <img src={nims} alt="" />
-            <img src={global} alt="" />
-            <img src={xlri} alt="" />
-            <img src={gandhi} alt="" />
-            <img src={spjain} alt="" />
-            <img src={auro} alt="" />
-            <img src={anant} alt="" />
-            <img src={lpu} alt="" />
-            <img src={galgotias} alt="" />
-        </div>
-
-        <div className="bg-gradient-to-b from-blue-50 via-gray-100 to-white py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-5">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded-lg p-6 text-left"
-          >
-            <div className="text-white bg-green-400 w-fit px-2 rounded-full text-lg mb-4">✓</div>
-            <h3 className="font-semibold text-lg text-gray-900 mb-2">
-              {feature.title}
-            </h3>
-            <p className="text-gray-600">{feature.description}</p>
-          </div>
-        ))}
+      <div className="grid grid-cols-2 md:grid-cols-6 p-8 md:p-14 gap-10">
+        <img src={jaipur} alt="" />
+        <img src={srm} alt="" />
+        <img src={imi} alt="" />
+        <img src={nims} alt="" />
+        <img src={global} alt="" />
+        <img src={xlri} alt="" />
+        <img src={gandhi} alt="" />
+        <img src={spjain} alt="" />
+        <img src={auro} alt="" />
+        <img src={anant} alt="" />
+        <img src={lpu} alt="" />
+        <img src={galgotias} alt="" />
       </div>
-    
-    <img src={crm} alt="" className="mt-10 md:mt-16 mx-auto md:max-w-2xl " />
-</div>
 
-
+      <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-5">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-gray-800 shadow-md rounded-lg p-6 text-left"
+            >
+              <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
+                ✓
+              </div>
+              <h3 className="font-semibold text-lg text-white mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-300">{feature.description}</p>
+            </div>
+          ))}
         </div>
-    );
+
+        <img src={crm} alt="" className="mt-10 md:mt-16 mx-auto md:max-w-2xl" />
+      </div>
+    </div>
+  );
 }
 
 export default Universities;
