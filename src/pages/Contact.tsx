@@ -4,6 +4,8 @@ import "react-phone-number-input/style.css";
 import { Mail, MessageSquareText, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import Nav2 from "../components/Nav2";
+import Footer2 from "../components/Footer2";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -83,7 +85,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24 md:pt-32 bg-black min-h-screen text-white">
+    <div className="pt-24 bg-black min-h-screen text-white">
+      <Nav2 />
       <section className="w-full md:w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 pb-8  text-white">
         <div className="pt-4">
           <h2 className="text-2xl mb-2 font-semibold">Dubai</h2>
@@ -180,7 +183,7 @@ export default function ContactPage() {
         expert, and we’ll get back to you within 24 hours.
       </p>
 
-      <div className="flex flex-col md:flex-row justify-center items-start w-full md:w-[90%] mx-auto px-6 py-8 gap-10 mb-7 bg-black">
+      <div className="flex flex-col md:flex-row justify-center items-start mx-auto py-8 gap-10 mb-7 bg-black">
         {/* Form Section */}
         <div className="w-full md:w-1/2 max-w-lg bg-[#2c2c2c] rounded-lg p-8 shadow-lg text-left text-white">
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -249,6 +252,7 @@ export default function ContactPage() {
           ></iframe>
         </div>
       </div>
+      <Footer2 />
     </div>
   );
 }

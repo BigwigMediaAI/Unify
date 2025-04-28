@@ -49,12 +49,14 @@ function Nav() {
     >
       <div className="flex items-center justify-between p-4 md:px-10 relative">
         <div className="flex items-center space-x-1 ml-5">
-          <span className="text-red-400 text-2xl font-bold">U</span>
-          <span className="text-blue-400 text-2xl font-bold">n</span>
-          <span className="text-yellow-300 text-2xl font-bold">i</span>
-          <span className="text-green-400 text-2xl font-bold">f</span>
-          <span className="text-violet-400 text-2xl font-bold">y</span>
-          <span className="text-teal-300 text-2xl font-bold">i</span>
+          <a href="/">
+            <span className="text-red-400 text-2xl font-bold">U</span>
+            <span className="text-blue-400 text-2xl font-bold">n</span>
+            <span className="text-yellow-300 text-2xl font-bold">i</span>
+            <span className="text-green-400 text-2xl font-bold">f</span>
+            <span className="text-violet-400 text-2xl font-bold">y</span>
+            <span className="text-teal-300 text-2xl font-bold">i</span>
+          </a>
         </div>
 
         <button

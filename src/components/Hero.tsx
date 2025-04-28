@@ -5,7 +5,6 @@ import ContactUs from "./Contact";
 const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
@@ -34,12 +33,11 @@ const Hero: React.FC = () => {
           successful admissions. Let Unifyi transform your institution and
           elevate your efficiency to the next level.
         </p>
-        <button
-          onClick={openModal}
-          className="inline-block bg-blue-600 text-white px-6 p-2 rounded-lg shadow-md hover:bg-blue-700"
-        >
-          Contact Us
-        </button>
+        <a href="/contact">
+          <button className="inline-block mt-3 bg-blue-600 text-white px-6 p-2 rounded-lg shadow-md hover:bg-blue-700">
+            Contact Us
+          </button>
+        </a>
       </div>
 
       {/* Right Section */}
