@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import crm from "../assets/Admission.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const features = [
   {
@@ -36,6 +38,14 @@ function Universities() {
     setCurrent((prev) => (prev === features.length - 1 ? 0 : prev + 1));
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <div className="bg-black text-white mb-10 py-10">
       <h1 className="text-3xl md:text-4xl font-semibold text-center mb-10">
@@ -49,6 +59,7 @@ function Universities() {
           <div
             key={index}
             className="bg-gray-800 shadow-md rounded-lg p-6 text-left hover:shadow-lg transition"
+            data-aos="zoom-in"
           >
             <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
               ✓

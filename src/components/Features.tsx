@@ -7,8 +7,18 @@ import admin from "../assets/features/admin panel.webp";
 import vendor from "../assets/features/vendor.webp";
 import document from "../assets/features/document (1).webp";
 import communication from "../assets/features/communication.webp";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Features() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
   const featureData = [
     {
       title: "Admission Management",
@@ -194,11 +204,11 @@ function Features() {
 
   return (
     <div id="features" className="md:w-11/12 mx-auto px-4 py-16">
-      <h2 className="text-5xl font-extrabold text-white text-center mb-16 tracking-tight">
+      <h2 className="text-5xl font-extrabold text-white text-center mb-10 tracking-tight">
         Our Services
       </h2>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col space-y-20">
         {featureData.map((feature, index) => (
           <div
             key={index}
@@ -208,7 +218,10 @@ function Features() {
             } items-center gap-12 md:gap-20`}
           >
             {/* Text Section */}
-            <div className="w-full md:w-1/2">
+            <div
+              className="w-full md:w-1/2"
+              data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
+            >
               <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 {feature.title}
               </h3>
@@ -230,7 +243,10 @@ function Features() {
 
             {/* Image */}
             <div className="w-full md:w-1/2 flex justify-center">
-              <div className="relative group">
+              <div
+                className="relative group"
+                data-aos={index % 2 !== 0 ? "fade-left" : "fade-right"}
+              >
                 <img
                   src={feature.imageUrl}
                   alt={feature.title}

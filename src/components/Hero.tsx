@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import social from "../assets/unify.png";
 import ContactUs from "./Contact";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeModal = () => setIsModalOpen(false);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <section
       id="home"
       className="relative flex flex-col lg:flex-row items-center justify-between pt-24 py-12 px-4 md:px-14 mt-10 bg-black"
+      data-aos="fade-up"
     >
       {/* Left Section */}
       <div className="w-11/12 mx-auto mb-10 space-y-5 text-center lg:text-left">
