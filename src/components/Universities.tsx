@@ -1,15 +1,5 @@
-// import jaipur from "../assets/universities/jaipur.webp";
-// import srm from "../assets/universities/SRM.webp";
-// import imi from "../assets/universities/imi.webp";
-// import nims from "../assets/universities/nims.webp";
-// import anant from "../assets/universities/anant.webp";
-// import auro from "../assets/universities/auro.webp";
-// import galgotias from "../assets/universities/Galgotias-1.webp";
-// import gandhi from "../assets/universities/gandhi.webp";
-// import global from "../assets/universities/global.webp";
-// import lpu from "../assets/universities/Lovely-Professional-University-Logo.webp";
-// import spjain from "../assets/universities/sp jain.webp";
-// import xlri from "../assets/universities/XLRI.webp";
+import { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import crm from "../assets/Admission.svg";
 
 const features = [
@@ -19,65 +9,92 @@ const features = [
       "By qualifying and nurturing leads, your sales team can focus on leads with the highest potential, and your business can increase the likelihood of converting them into paying students.",
   },
   {
-    title: "Enhanced students relationships",
+    title: "Enhanced student relationships",
     description:
       "Lead management, personalized communication, and timely follow-ups enable your business to build strong relationships with students, leading to increased loyalty and retention.",
   },
   {
     title: "Increased efficiency",
     description:
-      "Automating lead management processes with the help of AI, can help streamline your sales operations, reduce manual errors, and increase productivity.",
+      "Automating lead management processes with the help of AI can help streamline your sales operations, reduce manual errors, and increase productivity.",
   },
   {
     title: "Better decision-making",
     description:
-      "Get valuable insights into students behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
+      "Get valuable insights into student behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
   },
 ];
 
 function Universities() {
+  const [current, setCurrent] = useState(0);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? features.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === features.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <div className="bg-black text-white mb-10 py-5">
-      <h1 className="text-4xl font-semibold  text-center mb-10 ">
+    <div className="bg-black text-white mb-10 py-10">
+      <h1 className="text-3xl md:text-4xl font-semibold text-center mb-10">
         <span className="text-blue-400 font-bold">UNIFYI</span> - Breathing Life
         into Admission Management
       </h1>
 
-      {/* <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-6 gap-10">
-        <img src={jaipur} alt="" />
-        <img src={srm} alt="" />
-        <img src={imi} alt="" />
-        <img src={nims} alt="" />
-        <img src={global} alt="" />
-        <img src={xlri} alt="" />
-        <img src={gandhi} alt="" />
-        <img src={spjain} alt="" />
-        <img src={auro} alt="" />
-        <img src={anant} alt="" />
-        <img src={lpu} alt="" />
-        <img src={galgotias} alt="" />
-      </div> */}
-
-      <div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-11/12 mx-auto px-5">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 shadow-md rounded-lg p-6 text-left"
-            >
-              <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
-                ✓
-              </div>
-              <h3 className="font-semibold text-lg text-white mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-gray-300">{feature.description}</p>
+      {/* Desktop View */}
+      <div className="hidden md:grid grid-cols-4 gap-6 w-11/12 mx-auto px-5">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 shadow-md rounded-lg p-6 text-left hover:shadow-lg transition"
+          >
+            <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
+              ✓
             </div>
-          ))}
+            <h3 className="font-semibold text-lg text-white mb-2">
+              {feature.title}
+            </h3>
+            <p className="text-gray-300">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile View */}
+      <div className="md:hidden w-5/6 mx-auto relative px-5">
+        <div className="bg-gray-800 shadow-md rounded-lg p-6 text-left">
+          <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
+            ✓
+          </div>
+          <h3 className="font-semibold text-lg text-white mb-2">
+            {features[current].title}
+          </h3>
+          <p className="text-gray-300">{features[current].description}</p>
         </div>
 
-        <img src={crm} alt="" className="mt-10 md:mt-16 mx-auto md:max-w-2xl" />
+        {/* Left and Right Arrow Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-gray-400 p-1 rounded-full text-white"
+        >
+          <FaChevronLeft />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-gray-400 p-1 rounded-full text-white"
+        >
+          <FaChevronRight />
+        </button>
       </div>
+
+      {/* CRM Image */}
+      <img
+        src={crm}
+        alt="Admission Management"
+        className="mt-10 md:mt-16 mx-auto md:max-w-2xl hidden md:block"
+      />
     </div>
   );
 }
