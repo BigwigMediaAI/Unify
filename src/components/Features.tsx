@@ -193,30 +193,35 @@ function Features() {
   ];
 
   return (
-    <div id="features" className="w-full px-4 md:px-12 py-10 bg-black">
-      <h2 className="text-5xl font-bold text-white text-center mb-12">
-        Services
+    <div id="features" className="md:w-11/12 mx-auto px-4 py-16">
+      <h2 className="text-5xl font-extrabold text-white text-center mb-16 tracking-tight">
+        Our Services
       </h2>
 
-      <div className="flex flex-col gap-24">
+      <div className="flex flex-col gap-8">
         {featureData.map((feature, index) => (
           <div
             key={index}
             id={feature.id}
             className={`flex flex-col md:flex-row ${
               index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            } items-center justify-between gap-8`}
+            } items-center gap-12 md:gap-20`}
           >
             {/* Text Section */}
-            <div className="w-full md:w-1/2 max-w-2xl">
-              <h3 className="text-3xl md:text-4xl font-bold text-white">
+            <div className="w-full md:w-1/2">
+              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 {feature.title}
               </h3>
-              <p className="text-gray-200 mt-4">{feature.description}</p>
-              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 text-gray-300">
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {feature.description}
+              </p>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
                 {feature.listItems.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-blue-500 text-xl">✔</span>
+                  <li
+                    key={i}
+                    className="flex items-center gap-2 text-gray-300 text-base"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-blue-600"></span>
                     {item}
                   </li>
                 ))}
@@ -224,12 +229,15 @@ function Features() {
             </div>
 
             {/* Image */}
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <img
-                src={feature.imageUrl}
-                alt={feature.title}
-                className="w-80 md:w-96 max-w-full"
-              />
+            <div className="w-full md:w-1/2 flex justify-center">
+              <div className="relative group">
+                <img
+                  src={feature.imageUrl}
+                  alt={feature.title}
+                  className="w-80 md:w-96 max-w-full rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 rounded-xl bg-black opacity-0 group-hover:opacity-10 transition duration-300" />
+              </div>
             </div>
           </div>
         ))}
