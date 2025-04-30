@@ -114,28 +114,28 @@ function Footer() {
 
         {/* Social Media Links */}
         <div className="flex justify-center space-x-6 mt-12">
-          <a href="https://www.facebook.com/bigwigmedia.in/" target="blank">
+          <a
+            href="https://www.facebook.com/profile.php?id=61575340735142"
+            target="blank"
+          >
             <FontAwesomeIcon
               icon={faFacebook}
               className="h-8 w-8 text-blue-600 hover:text-blue-700"
             />
           </a>
-          <a href="https://www.instagram.com/bigwigmedia/" target="blank">
+          <a href="https://www.instagram.com/bigwigdigital/" target="blank">
             <FontAwesomeIcon
               icon={faInstagram}
               className="h-8 w-8 text-pink-600 hover:text-pink-700"
             />
           </a>
-          <a href="https://x.com/bigwig_media" target="blank">
+          <a href="https://x.com/bigwig_digital" target="blank">
             <FontAwesomeIcon
               icon={faXTwitter}
               className="h-8 w-8 text-blue-400 hover:text-blue-500"
             />
           </a>
-          <a
-            href="https://www.youtube.com/channel/UCA0GIfKW7ORxUT6_mMnEEzQ"
-            target="blank"
-          >
+          <a href="https://www.youtube.com/@BigwigDigital2024" target="blank">
             <FontAwesomeIcon
               icon={faYoutube}
               className="h-8 w-8 text-red-700 hover:text-red-800"

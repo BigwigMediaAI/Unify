@@ -32,7 +32,7 @@ function Footer2() {
             },
             {
               icon: faLinkedin,
-              href: "https://www.linkedin.com/company/106698073/admin/dashboard/",
+              href: "https://www.linkedin.com/company/bigwig-digital/",
             },
           ].map((social, index) => (
             <a
