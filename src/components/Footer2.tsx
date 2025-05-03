@@ -51,7 +51,7 @@ function Footer2() {
 
         {/* Copyright */}
         <p className="text-sm text-center">
-          © 2025 bigwigmedia.in. All rights reserved.
+          © 2025 bigwigmedia. All rights reserved.
         </p>
       </div>
     </div>
