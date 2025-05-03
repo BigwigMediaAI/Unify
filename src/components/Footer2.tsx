@@ -1,6 +1,7 @@
 import {
   faFacebookF,
   faInstagram,
+  faLinkedin,
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
@@ -15,19 +16,23 @@ function Footer2() {
           {[
             {
               icon: faFacebookF,
-              href: "https://www.facebook.com/bigwigmedia.in/",
+              href: "https://www.facebook.com/profile.php?id=61575340735142",
             },
             {
               icon: faInstagram,
-              href: "https://www.instagram.com/bigwigmedia/",
+              href: "https://www.instagram.com/bigwigdigital/",
             },
             {
               icon: faYoutube,
-              href: "https://www.youtube.com/channel/UCA0GIfKW7ORxUT6_mMnEEzQ",
+              href: "https://www.youtube.com/@BigwigDigital2024",
             },
             {
               icon: faXTwitter,
-              href: "https://x.com/bigwig_media",
+              href: "https://x.com/bigwig_digital",
+            },
+            {
+              icon: faLinkedin,
+              href: "https://www.linkedin.com/company/bigwig-digital/",
             },
           ].map((social, index) => (
             <a

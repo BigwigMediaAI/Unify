@@ -18,9 +18,7 @@ const Team: React.FC = () => {
               alt="CEO"
               className="w-48 h-48 mx-auto rounded-full object-cover mb-4"
             />
-            <h3 className="text-2xl text-black font-semibold text-center">
-              Vipul Dutta
-            </h3>
+            <h3 className="text-xl font-semibold text-center">Vipul Dutta</h3>
             <p className="text-black font-semibold text-center my-3">
               Founder & CEO
             </p>
