@@ -1,64 +1,73 @@
 const StatsSection = () => {
+  const stats = [
+    {
+      value: "20M+",
+      label: "Student engagements powered annually",
+    },
+    {
+      value: "4L+",
+      label: "Applications managed annually",
+    },
+    {
+      value: "4M+",
+      label: "Inquiries processed annually",
+    },
+    {
+      value: "2000+",
+      label: "Business users across departments",
+    },
+  ];
+
   return (
-    <div className="bg-black text-white ">
-      <h2 className="text-3xl font-semibold text-center mb-8 text-white py-4">
-        We are a global enrollment platform designed to equip you for growth
-      </h2>
+    <section className="relative bg-black text-white py-20 overflow-hidden">
+      {/* Glow background */}
+      <div className="absolute top-[-100px] left-[-100px] w-[420px] h-[420px] bg-blue-600/20 rounded-full blur-[130px]" />
+      <div className="absolute bottom-[-120px] right-[-120px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[140px]" />
 
-      <div className="bg-gray-800 text-white py-8 px-2 w-11/12 mx-auto rounded-lg mb-10">
-        <div className="grid grid-cols-1 md:flex md:justify-around gap-6 md:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5 md:px-10">
-            {/* Stat 1 */}
-            <div className="flex flex-col md:text-left">
-              <p className="text-3xl font-bold">
-                20 <span className="text-2xl">Million +</span>
+      <div className="relative w-11/12 mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 leading-tight">
+          We are a global enrollment platform
+          <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            designed to equip you for growth
+          </span>
+        </h2>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition shadow-xl"
+            >
+              <p className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                {stat.value}
               </p>
-              <p className="mt-2 text-lg text-gray-300">
-                Student engagements powered on average annually
+
+              <p className="mt-3 text-gray-400 text-sm leading-relaxed">
+                {stat.label}
               </p>
             </div>
+          ))}
 
-            {/* Stat 2 */}
-            <div className="flex flex-col md:text-left">
-              <p className="text-3xl font-bold">
-                4 <span className="text-2xl">Lacs +</span>
-              </p>
-              <p className="mt-2 text-lg text-gray-300">
-                Applications managed on average annually
-              </p>
-            </div>
+          {/* Highlight Card */}
+          <div className="sm:col-span-2 lg:col-span-4 flex justify-center">
+            <div className="relative max-w-2xl w-full">
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-3xl rounded-3xl" />
 
-            {/* Stat 3 */}
-            <div className="flex flex-col md:text-left">
-              <p className="text-3xl font-bold">
-                4 <span className="text-2xl">Million +</span>
-              </p>
-              <p className="mt-2 text-lg text-gray-300">
-                Inquiries processed on average annually
-              </p>
-            </div>
+              <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-10 text-center shadow-2xl">
+                <p className="text-5xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                  100+
+                </p>
 
-            {/* Stat 4 */}
-            <div className="flex flex-col md:text-left">
-              <p className="text-3xl font-bold">2000+</p>
-              <p className="mt-2 text-lg text-gray-300">
-                Business users across departments and job functions
-              </p>
-            </div>
-          </div>
-
-          {/* Highlighted Stat */}
-          <div className="col-span-1 md:col-span-4 flex md:justify-center md:items-center">
-            <div className="bg-gray-700 rounded-md p-6 w-full md:w-auto md:p-16">
-              <p className="text-3xl font-bold text-white">100+</p>
-              <p className="mt-2 text-lg text-gray-300">
-                Education organizations trust Unify
-              </p>
+                <p className="mt-4 text-gray-400 text-lg">
+                  Education organizations trust Unify
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

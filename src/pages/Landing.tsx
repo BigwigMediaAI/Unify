@@ -9,6 +9,7 @@ import StatsSection from "../components/Stats";
 import Blog from "../components/Blog";
 
 import ImageSlider from "../components/Testimonial";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 function Landing() {
   return (
@@ -23,6 +24,7 @@ function Landing() {
       <Blog />
       <FAQ />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

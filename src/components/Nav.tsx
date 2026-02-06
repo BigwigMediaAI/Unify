@@ -42,33 +42,30 @@ function Nav() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-black shadow-md shadow-gray-400" : "bg-black"
-      }`}
-    >
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-black border-b border-white/20 shadow-lg transition-all duration-300">
       <div className="flex items-center justify-between p-4 md:px-10 relative">
+        {/* Logo */}
         <div className="flex items-center space-x-1 ml-5">
-          <a href="/">
-            <span className="text-red-400 text-2xl font-bold">U</span>
-            <span className="text-blue-400 text-2xl font-bold">n</span>
-            <span className="text-yellow-300 text-2xl font-bold">i</span>
-            <span className="text-green-400 text-2xl font-bold">f</span>
-            <span className="text-violet-400 text-2xl font-bold">y</span>
-            <span className="text-teal-300 text-2xl font-bold">i</span>
+          <a href="/" className="text-2xl font-extrabold tracking-wide">
+            <span className="text-red-400">U</span>
+            <span className="text-blue-400">n</span>
+            <span className="text-yellow-300">i</span>
+            <span className="text-green-400">f</span>
+            <span className="text-violet-400">y</span>
+            <span className="text-teal-300">i</span>
           </a>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white hover:text-gray-300 focus:outline-none z-50"
+          className="md:hidden text-white hover:scale-110 transition-transform duration-200 z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
-            className="w-6 h-6"
+            className="w-7 h-7"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
@@ -79,31 +76,36 @@ function Nav() {
           </svg>
         </button>
 
-        <div className="hidden md:flex gap-8 space-x-6 text-white font-bold">
-          <button
-            onClick={() => handleScrollToSection("home")}
-            className="hover:text-gray-300"
-          >
-            Home
-          </button>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8 text-white font-semibold">
+          {["home", "about", "blog", "faq"].map((item) => (
+            <button
+              key={item}
+              onClick={() => handleScrollToSection(item)}
+              className="relative group"
+            >
+              {item.toUpperCase()}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+            </button>
+          ))}
 
+          {/* Features Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
+            onMouseLeave={() => {
+              setTimeout(() => setIsDropdownOpen(false), 150);
+            }}
           >
-            <button className="hover:text-gray-300 flex items-center">
-              Features
+            <button className="flex items-center gap-1 group">
+              FEATURES
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                className={`w-4 h-4 transition-transform ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
                 fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
                 stroke="currentColor"
-                className="w-4 h-4 ml-1 transition-transform duration-200"
-                style={{
-                  transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
-                }}
+                viewBox="0 0 24 24"
               >
                 <path
                   strokeLinecap="round"
@@ -114,12 +116,16 @@ function Nav() {
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute left-[-100px] bg-gray-900 shadow-lg rounded-lg p-4 grid grid-cols-3 gap-4 w-[600px] h-[300px] z-50">
+              <div
+                className="absolute left-[-100px] top-full pt-4 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-6 grid grid-cols-3 gap-4 w-[620px]"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}
+              >
                 {features.map((feature, index) => (
                   <button
                     key={index}
                     onClick={() => handleScrollToSection(feature.id)}
-                    className="text-white hover:text-gray-300 text-sm"
+                    className="text-sm text-white/90 hover:text-white hover:translate-x-1 transition-all duration-200"
                   >
                     {feature.name}
                   </button>
@@ -129,86 +135,53 @@ function Nav() {
           </div>
 
           <button
-            onClick={() => handleScrollToSection("about")}
-            className="hover:text-gray-300"
-          >
-            About Us
-          </button>
-          <button
-            onClick={() => handleScrollToSection("blog")}
-            className="hover:text-gray-300"
-          >
-            Blogs
-          </button>
-          <button
-            onClick={() => handleScrollToSection("faq")}
-            className="hover:text-gray-300"
-          >
-            FAQ
-          </button>
-          <button
             onClick={() => window.open("/team", "_blank")}
-            className="hover:text-gray-300"
+            className="relative group"
           >
-            Team
+            TEAM
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
           </button>
         </div>
 
-        <div className="md:block hidden">
+        {/* Contact Button */}
+        <div className="hidden md:block">
           <button
             onClick={() => navigate("/contact")}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded focus:outline-none"
+            className="px-6 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-200"
           >
             Contact Us
           </button>
         </div>
       </div>
 
+      {/* Mobile Glass Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 top-20 right-0 bg-black bg-opacity-70 z-40" />
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-md z-40" />
       )}
 
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-14 right-0 bg-gray-900 shadow-lg rounded-md p-4 flex flex-col space-y-4 z-50 h-[40vh] w-full max-w-md text-white">
-          <button
-            onClick={() => handleScrollToSection("home")}
-            className="hover:text-gray-300"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => handleScrollToSection("features")}
-            className="hover:text-gray-300"
-          >
-            Features
-          </button>
-          <button
-            onClick={() => handleScrollToSection("about")}
-            className="hover:text-gray-300"
-          >
-            About Us
-          </button>
-          <button
-            onClick={() => handleScrollToSection("blog")}
-            className="hover:text-gray-300"
-          >
-            Blogs
-          </button>
-          <button
-            onClick={() => handleScrollToSection("blog")}
-            className="hover:text-gray-300"
-          >
-            FAQ
-          </button>
+        <div className="absolute top-16 right-4 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-6 flex flex-col space-y-4 z-50 w-[90%] max-w-sm text-white animate-slideIn">
+          {["home", "about", "blog", "faq"].map((item) => (
+            <button
+              key={item}
+              onClick={() => handleScrollToSection(item)}
+              className="hover:translate-x-1 transition"
+            >
+              {item.toUpperCase()}
+            </button>
+          ))}
+
           <button
             onClick={() => window.open("/team", "_blank")}
-            className="hover:text-gray-300"
+            className="hover:translate-x-1 transition"
           >
-            Team
+            TEAM
           </button>
+
           <button
             onClick={() => navigate("/contact")}
-            className="w-1/2 mx-auto block text-center bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg focus:outline-none text-lg sm:text-xl shadow-md"
+            className="mt-3 w-full bg-gradient-to-r from-blue-500 to-indigo-600 px-5 py-2 rounded-xl shadow-md hover:scale-105 transition"
           >
             Contact Us
           </button>

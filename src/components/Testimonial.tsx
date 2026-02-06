@@ -39,82 +39,89 @@ const testimonials = [
 const ImageSlider: React.FC = () => {
   const settings = {
     infinite: true,
-    speed: 2000,
+    speed: 1200,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
-    cssEase: "linear",
+    autoplaySpeed: 3500,
     arrows: false,
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 1 },
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
+        settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <section id="case" className="bg-black text-white mb-10">
-      <div className="w-11/12 mx-auto px-2 text-center py-4">
-        <h2 className="text-5xl font-semibold mb-8">
+    <section
+      id="case"
+      className="relative bg-black text-white py-20 overflow-hidden"
+    >
+      {/* Glow background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-blue-600/20 rounded-full blur-[130px]" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[150px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
           What Our Partners Are Saying
         </h2>
-        <div className="flex flex-col md:flex-row items-center gap-6 mt-5">
-          <div className="md:w-1/4 text-center md:text-left">
-            <h2 className="text-2xl font-semibold text-gray-100">
+
+        <div className="flex flex-col lg:flex-row gap-10 items-center">
+          {/* Left Info */}
+          <div className="lg:w-1/4 text-center lg:text-left">
+            <h3 className="text-xl font-semibold text-gray-100">
               CLIENT TESTIMONIALS
-            </h2>
-            <div className="flex items-center gap-2 mt-2 justify-center md:justify-start">
-              <div className="rounded-full p-2 text-gray-100 text-xl font-bold">
-                <img
-                  src="https://www.svgrepo.com/show/475656/google-color.svg"
-                  alt=""
-                  className="w-8"
-                />
-              </div>
+            </h3>
+
+            <div className="flex items-center gap-3 mt-3 justify-center lg:justify-start">
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="Google"
+                className="w-8"
+              />
               <div>
-                <p className="font-bold text-lg text-gray-100">Rated 4.8/5</p>
+                <p className="font-bold text-lg">Rated 4.8/5</p>
                 <p className="text-gray-400 text-sm">250+ Google Reviews</p>
               </div>
             </div>
-            <p className="text-gray-400 mt-4">
-              Don't just take our word for it. Here's what our clients have to
-              say about their Unique experience.
+
+            <p className="text-gray-400 mt-4 text-sm leading-relaxed">
+              Don't just take our word for it. Here's what our clients say about
+              their experience with Unifyi.
             </p>
           </div>
-          <div className="md:w-3/4 w-full">
+
+          {/* Slider */}
+          <div className="lg:w-3/4 w-full">
             <Slider {...settings}>
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="px-4">
-                  {" "}
-                  {/* Add horizontal gap */}
-                  <div className="p-6 rounded-lg bg-gray-800 h-[420px] flex flex-col justify-between">
+                <div key={index} className="px-3">
+                  <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl flex flex-col justify-between min-h-[340px] hover:bg-white/10 transition">
                     <div>
                       <div className="flex justify-center mb-4">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="rounded-full w-20 h-20 object-cover border-4 border-white"
+                          className="rounded-full w-20 h-20 object-cover border border-white/20"
                         />
                       </div>
-                      <p className="text-md italic mb-4 text-gray-200">
+
+                      <p className="text-sm italic text-gray-300 leading-relaxed">
                         "{testimonial.text}"
                       </p>
                     </div>
-                    <div>
+
+                    <div className="mt-6 text-center">
                       <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-xs text-gray-400">
                         {testimonial.role}, {testimonial.company}
                       </p>
                     </div>

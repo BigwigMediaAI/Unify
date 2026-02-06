@@ -203,62 +203,76 @@ function Features() {
   ];
 
   return (
-    <div id="features" className="md:w-11/12 mx-auto px-4 py-16">
-      <h2 className="text-5xl font-extrabold text-white text-center mb-10 tracking-tight">
-        Our Services
-      </h2>
+    <section
+      id="features"
+      className="relative bg-black text-white py-20 overflow-hidden"
+    >
+      {/* Glow background */}
+      <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-blue-600/20 rounded-full blur-[130px]" />
+      <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[150px]" />
 
-      <div className="flex flex-col space-y-20">
-        {featureData.map((feature, index) => (
-          <div
-            key={index}
-            id={feature.id}
-            className={`flex flex-col md:flex-row ${
-              index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            } items-center gap-12 md:gap-20`}
-          >
-            {/* Text Section */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-20">
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Our Services
+          </span>
+        </h2>
+
+        <div className="flex flex-col space-y-24">
+          {featureData.map((feature, index) => (
             <div
-              className="w-full md:w-1/2"
-              data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
+              key={index}
+              id={feature.id}
+              className={`flex flex-col lg:flex-row ${
+                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+              } items-center gap-10`}
             >
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                {feature.title}
-              </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                {feature.description}
-              </p>
-              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
-                {feature.listItems.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-2 text-gray-300 text-base"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Image */}
-            <div className="w-full md:w-1/2 flex justify-center">
+              {/* Text */}
               <div
-                className="relative group"
-                data-aos={index % 2 !== 0 ? "fade-left" : "fade-right"}
+                className="w-full lg:w-1/2 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl"
+                data-aos={index % 2 !== 0 ? "fade-right" : "fade-left"}
               >
-                <img
-                  src={feature.imageUrl}
-                  alt={feature.title}
-                  className="w-80 md:w-96 max-w-full rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 rounded-xl bg-black opacity-0 group-hover:opacity-10 transition duration-300" />
+                <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
+                  {feature.title}
+                </h3>
+
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+                  {feature.description}
+                </p>
+
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                  {feature.listItems.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 text-gray-400 text-sm"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Image */}
+              <div className="w-full lg:w-1/2 flex justify-center">
+                <div
+                  className="relative max-w-md w-full"
+                  data-aos={index % 2 !== 0 ? "fade-left" : "fade-right"}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-3xl rounded-3xl" />
+
+                  <img
+                    src={feature.imageUrl}
+                    alt={feature.title}
+                    className="relative w-full rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 p-4 shadow-2xl transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

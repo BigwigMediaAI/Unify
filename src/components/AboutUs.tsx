@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+
 const AboutUs = () => {
   useEffect(() => {
     AOS.init({
@@ -11,54 +12,64 @@ const AboutUs = () => {
       easing: "ease-in-out",
     });
   }, []);
+
   const navigate = useNavigate();
+
   return (
-    <section id="about" className=" py-4 mb-10">
-      <h2 className="text-5xl font-bold text-white mb-4 text-center">
-        About Us
-      </h2>
+    <section
+      id="about"
+      className="relative bg-black text-white py-20 overflow-hidden"
+    >
+      {/* Glow background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-blue-600/20 rounded-full blur-[130px]" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[150px]" />
+      </div>
+
       <div
-        className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         data-aos="fade-up"
       >
-        {/* Text Content */}
-        <div>
-          <p className="text-md text-gray-200 mt-4 text-justify">
+        {/* Text Card */}
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-xl">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">About Us</h2>
+
+          <p className="text-gray-400 leading-relaxed mb-4">
             Ever wondered what you'd get if you crossed a digital advertising
-            agency with Artificial Intelligence & Machine learning technology?
-            Well, stop racking your brain cells! The answer is BIGWIG MEDIA, an
-            AI & ML infused, pow-bam-slammingly amazing digital advertising
-            agency that's breaking the internet!
+            agency with Artificial Intelligence & Machine Learning? Meet BIGWIG
+            MEDIA — an AI-powered force redefining the digital landscape with
+            innovation, creativity, and precision.
           </p>
-          <p className="text-md text-gray-200 mt-4 text-justify">
-            With AI and ML as our trusty sidekicks, we're transforming the
-            online ad world, offering ground-breaking services that help
-            businesses master the digital arena. Our special blend for success
-            includes our very own AI tech, marketing prowess, dynamite creative
-            skills, top-notch tech solutions, streamlined processes, and our
-            Sherlock-Holmes-like understanding of analytics. We don't just
-            partner with our clients to reach their goals. We're like the suave
-            secret agent, always aiming to outperform and exceed expectations!
+
+          <p className="text-gray-400 leading-relaxed mb-4">
+            We blend proprietary AI technology, marketing mastery, and advanced
+            analytics to build systems that don’t just perform — they dominate.
+            Our mission is simple: help institutions grow faster, smarter, and
+            more efficiently.
           </p>
-          <p className="text-md text-gray-200 mt-4 text-justify">
-            At Bigwig Media, we don't just click buttons and pull levers behind
-            the screen! We're the mad scientists, the innovators, the
-            trailblazers at the frontier of the digital marketing universe!
+
+          <p className="text-gray-400 leading-relaxed">
+            We’re not just another agency. We’re architects of digital evolution
+            — pushing boundaries and shaping the future of intelligent
+            automation.
           </p>
+
           <button
             onClick={() => navigate("/contact")}
-            className="inline-block mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700"
+            className="mt-8 px-8 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 font-semibold shadow-lg hover:scale-105 transition-all"
           >
             Contact Us
           </button>
         </div>
 
-        {/* Image */}
-        <div className="flex justify-center">
+        {/* Image Spotlight */}
+        <div className="relative flex justify-center">
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-3xl rounded-3xl" />
+
           <img
-            src={about} // Replace this URL with your actual image source
+            src={about}
             alt="About Us"
-            className="w-full max-w-sm md:max-w-lg rounded-lg"
+            className="relative w-full max-w-md rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 p-6 shadow-2xl"
           />
         </div>
       </div>

@@ -1,89 +1,118 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import faq_img from "../assets/faq-img.png";
+
 const faqs = [
   {
     question: "What is Unifyi?",
     answer:
-      "Unifyi is a comprehensive platform designed to streamline and centralize admissions processes for higher education institutions.",
+      "Unifyi is a centralized AI-powered platform that simplifies and automates admissions for modern educational institutions.",
   },
   {
-    question: "How does Unifyi improve the admissions process?",
+    question: "How does it improve admissions?",
     answer:
-      "Unifyi automates application processing, centralizes inquiries, and provides customizable post-application workflows to make admissions seamless.",
+      "It eliminates manual workflows, centralizes inquiries, and provides intelligent automation for faster processing and higher conversion.",
   },
   {
-    question: "Is Unifyi suitable for all types of educational institutions?",
+    question: "Can it integrate with existing systems?",
     answer:
-      "Yes, Unifyi is flexible and can be tailored to the specific needs of universities, colleges, and other higher education organizations.",
+      "Yes. Unifyi is designed to integrate seamlessly with your current infrastructure and third-party tools.",
   },
   {
-    question: "Can Unifyi integrate with existing systems?",
+    question: "Is it secure?",
     answer:
-      "Absolutely! Unifyi supports integration with various existing systems to ensure a smooth transition and workflow.",
+      "We follow enterprise-grade security practices and compliance standards to protect institutional and student data.",
   },
   {
-    question: "What kind of support does Unifyi offer?",
+    question: "Do you provide onboarding?",
     answer:
-      "We offer 24/7 customer support, onboarding assistance, and detailed documentation to help you get the most out of Unifyi.",
-  },
-  {
-    question: "Is training provided for using Unifyi?",
-    answer:
-      "Yes, we provide comprehensive training sessions to ensure your team is comfortable and efficient with the platform.",
-  },
-  {
-    question: "Does Unifyi offer analytics features?",
-    answer:
-      "Yes, Unifyi provides in-depth analytics to track admissions metrics, monitor progress, and make data-driven decisions.",
+      "Yes. Dedicated onboarding, training, and 24/7 support are included.",
   },
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="text-white mb-10 py-4 px-10 md:px-20">
-      <h2 className="text-5xl font-bold text-center mb-2 text-white">
-        Frequently Asked Questions
-      </h2>
-      <div className="flex flex-col md:flex-row justify-evenly  py-3 items-start ">
-        <div className="md:flex items-start hidden  ">
-          <img src={faq_img} alt="FAQ Illustration" className="w-80 max-w-sm" />
-        </div>
-        <div className="space-y-5 pt-10  ">
-          {faqs.map((faq, index) => (
-            <div key={index} className="relative">
-              {/* FAQ Box */}
-              <div className="bg-gray-50 border text-gray-900 border-gray-700 rounded-lg pl-12 pr-6 py-3 relative max-w-xl w-full">
-                {/* Number Badge (half-overlapping from left) */}
-                <div className="absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold border-2 border-orange-500">
-                  {index + 1}
-                </div>
+    <section className="relative bg-black text-white py-24 overflow-hidden">
+      {/* Glow background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-150px] left-[-150px] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[160px]" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[160px]" />
+      </div>
 
-                <button
-                  className="w-full text-left flex items-center justify-between"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="text-lg font-medium">{faq.question}</span>
-                  <ChevronDown
-                    className={`transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openIndex === index && (
-                  <div className="pt-2 text-gray-700 transition-all duration-300 ease-in-out">
-                    {faq.answer}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-start">
+        {/* LEFT SIDE — Editorial Block */}
+        <div>
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            Got questions?
+            <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              We’ve got answers.
+            </span>
+          </h2>
+
+          <p className="text-gray-400 text-lg leading-relaxed max-w-lg">
+            Everything you need to know about Unifyi — from integrations and
+            security to onboarding and analytics. Designed to remove friction
+            and give institutions clarity.
+          </p>
+
+          <div className="mt-8 text-sm text-gray-500">
+            Still curious? Our team is available 24/7.
+          </div>
+        </div>
+
+        {/* RIGHT SIDE — FAQ Timeline */}
+        <div className="relative">
+          {/* vertical line */}
+          <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-white/10" />
+
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="relative pl-10">
+                {/* timeline dot */}
+                <div
+                  className={`absolute left-0 top-6 w-6 h-6 rounded-full border-2 transition ${
+                    openIndex === index
+                      ? "bg-blue-500 border-blue-400"
+                      : "border-white/20 bg-black"
+                  }`}
+                />
+
+                <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl shadow-xl overflow-hidden">
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full flex justify-between items-center p-6 text-left group"
+                  >
+                    <span className="text-lg font-medium group-hover:text-blue-400 transition">
+                      {faq.question}
+                    </span>
+
+                    <ChevronDown
+                      className={`transition-transform duration-300 ${
+                        openIndex === index ? "rotate-180 text-blue-400" : ""
+                      }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`px-6 transition-all duration-300 ease-in-out ${
+                      openIndex === index
+                        ? "max-h-40 pb-6 opacity-100"
+                        : "max-h-0 opacity-0"
+                    } overflow-hidden`}
+                  >
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
-                )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

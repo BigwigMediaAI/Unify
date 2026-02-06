@@ -15,7 +15,7 @@ function Footer() {
     }
   };
   return (
-    <div className="bg-gray-800 text-white py-16">
+    <div className="bg-black text-white py-16">
       <div className="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Branding Section */}

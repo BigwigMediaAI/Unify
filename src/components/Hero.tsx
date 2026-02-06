@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 
 const Hero: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
@@ -20,53 +19,72 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col lg:flex-row items-center justify-between pt-24 py-12 px-4 md:px-14 mt-10 bg-black"
+      className="relative overflow-hidden bg-black text-white pt-28 pb-20 px-6 md:px-14"
       data-aos="fade-up"
     >
-      {/* Left Section */}
-      <div className="w-11/12 mx-auto mb-10 space-y-5 text-center lg:text-left">
-        <h4 className="text-blue-400 font-bold text-lg flex items-center justify-center lg:justify-start">
-          Empowering Educational Institutions & Universities
-          <span className="ml-1 text-blue-400">🎓</span>
-        </h4>
-        <h1 className="text-3xl md:text-4xl font-bold text-white leading-snug">
-          Streamline Your Leads, Applications & Admission Management Processes -{" "}
-          <span className="text-blue-400">Powered by AI</span>
-        </h1>
-        <p className="text-gray-300 leading-relaxed text-justify">
-          Unifyi serves as a comprehensive platform designed to streamline your
-          educational establishment, converting it into an efficient operational
-          powerhouse. From applicant tracking to counseling and vendor
-          management, right through to admissions, Unifyi's integration offers a
-          simplistic yet sophisticated solution for workflow optimization. By
-          enhancing communication and improving management processes, it
-          simultaneously boosts your conversion rate from lead inquiries to
-          successful admissions. Let Unifyi transform your institution and
-          elevate your efficiency to the next level.
-        </p>
-        <a href="/contact">
-          <button className="inline-block mt-3 bg-blue-600 text-white px-6 p-2 rounded-lg shadow-md hover:bg-blue-700">
-            Contact Us
-          </button>
-        </a>
-      </div>
+      {/* Glow Background Blobs */}
+      <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-blue-600/20 rounded-full blur-[120px]" />
+      <div className="absolute bottom-[-120px] right-[-120px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[140px]" />
 
-      {/* Right Section */}
-      <div className="mt-8 lg:mt-0 lg:ml-8 w-full lg:w-auto">
-        <img
-          src={social}
-          alt="Happy User"
-          className="w-full mx-auto md:w-full object-cover"
-        />
+      <div className="relative flex flex-col lg:flex-row items-center justify-between gap-10">
+        {/* Left Content */}
+        <div className="max-w-2xl space-y-6 text-center lg:text-left">
+          <h4 className="text-blue-400 font-semibold tracking-wide">
+            Empowering Educational Institutions 🎓
+          </h4>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Streamline Your Leads, Applications &
+            <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Admission Management with AI
+            </span>
+          </h1>
+
+          <p className="text-gray-400 leading-relaxed">
+            Unifyi transforms your institution into an operational powerhouse.
+            From applicant tracking to vendor management and admissions — our
+            AI-powered platform optimizes workflows, improves communication, and
+            boosts your conversion rates.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 font-semibold shadow-lg hover:scale-105 transition-all duration-200"
+            >
+              Get Started
+            </button>
+
+            <a
+              href="/contact"
+              className="px-8 py-3 rounded-xl border border-white/20 backdrop-blur-md bg-white/5 hover:bg-white/10 transition"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        {/* Right Image Card */}
+        <div className="relative w-full max-w-lg">
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 rounded-3xl blur-2xl" />
+
+          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 shadow-2xl">
+            <img
+              src={social}
+              alt="Dashboard Preview"
+              className="w-full rounded-xl object-cover"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className="bg-white p-6 rounded-lg shadow-lg relative w-full max-w-md">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md">
+          <div className="relative bg-zinc-900 border border-white/10 p-6 rounded-2xl shadow-2xl w-full max-w-md">
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              className="absolute top-3 right-3 text-gray-400 hover:text-white"
             >
               ✖
             </button>

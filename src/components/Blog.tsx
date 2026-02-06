@@ -35,12 +35,12 @@ const Blog = () => {
     const fetchBlogPosts = async () => {
       try {
         const response = await axios.get(
-          `https://bigwigaibackend.onrender.com/api/v1/blog/viewblog`
+          `https://bigwigaibackend.onrender.com/api/v1/blog/viewblog`,
         );
         const sortedPosts = response.data.sort(
           (a: BlogPost, b: BlogPost) =>
             new Date(b.datePublished).getTime() -
-            new Date(a.datePublished).getTime()
+            new Date(a.datePublished).getTime(),
         );
         setBlogPosts(sortedPosts);
         setLoading(false);

@@ -8,22 +8,22 @@ const features = [
   {
     title: "Improved conversion rates",
     description:
-      "By qualifying and nurturing leads, your sales team can focus on leads with the highest potential, and your business can increase the likelihood of converting them into paying students.",
+      "By qualifying and nurturing leads, your sales team can focus on leads with the highest potential and increase student conversions.",
   },
   {
     title: "Enhanced student relationships",
     description:
-      "Lead management, personalized communication, and timely follow-ups enable your business to build strong relationships with students, leading to increased loyalty and retention.",
+      "Personalized communication and timely follow-ups help build strong long-term student relationships.",
   },
   {
     title: "Increased efficiency",
     description:
-      "Automating lead management processes with the help of AI can help streamline your sales operations, reduce manual errors, and increase productivity.",
+      "AI automation reduces manual work, eliminates errors, and improves operational productivity.",
   },
   {
     title: "Better decision-making",
     description:
-      "Get valuable insights into student behavior and preferences, enabling you to make informed and data-driven decisions about sales strategies and marketing efforts.",
+      "Data insights help you make smarter marketing and admission decisions backed by analytics.",
   },
 ];
 
@@ -47,66 +47,86 @@ function Universities() {
   }, []);
 
   return (
-    <div className="bg-black text-white mb-10 py-10">
-      <h1 className="text-3xl md:text-4xl font-semibold text-center mb-10">
-        <span className="text-blue-400 font-bold">UNIFYI</span> - Breathing Life
-        into Admission Management
-      </h1>
+    <section className="relative bg-black text-white py-20 overflow-hidden">
+      {/* Glow background */}
+      <div className="absolute top-[-120px] left-[-120px] w-[420px] h-[420px] bg-blue-600/20 rounded-full blur-[130px]" />
+      <div className="absolute bottom-[-150px] right-[-150px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[150px]" />
 
-      {/* Desktop View */}
-      <div className="hidden md:grid grid-cols-4 gap-6 w-11/12 mx-auto px-5">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 shadow-md rounded-lg p-6 text-left hover:shadow-lg transition"
-            data-aos="zoom-in"
-          >
-            <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
-              ✓
+      <div className="relative w-11/12 mx-auto">
+        <h1 className="text-3xl md:text-5xl font-bold text-center mb-16 leading-tight">
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            UNIFYI
+          </span>{" "}
+          – Breathing Life into Admission Management
+        </h1>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              data-aos="zoom-in"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition duration-300 shadow-xl"
+            >
+              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-green-500/20 text-green-400 mb-4">
+                ✓
+              </div>
+
+              <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-            <h3 className="font-semibold text-lg text-white mb-2">
-              {feature.title}
-            </h3>
-            <p className="text-gray-300">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile View */}
-      <div className="md:hidden w-5/6 mx-auto relative px-5">
-        <div className="bg-gray-800 shadow-md rounded-lg p-6 text-left">
-          <div className="text-white bg-green-500 w-fit px-2 rounded-full text-lg mb-4">
-            ✓
-          </div>
-          <h3 className="font-semibold text-lg text-white mb-2">
-            {features[current].title}
-          </h3>
-          <p className="text-gray-300">{features[current].description}</p>
+          ))}
         </div>
 
-        {/* Left and Right Arrow Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-gray-400 p-1 rounded-full text-white"
-        >
-          <FaChevronLeft />
-        </button>
+        {/* Mobile Slider */}
+        <div className="md:hidden relative">
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-green-500/20 text-green-400 mb-4">
+              ✓
+            </div>
 
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-gray-400 p-1 rounded-full text-white"
-        >
-          <FaChevronRight />
-        </button>
+            <h3 className="font-semibold text-lg mb-2">
+              {features[current].title}
+            </h3>
+
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {features[current].description}
+            </p>
+          </div>
+
+          {/* Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white/10 border border-white/20 backdrop-blur-md p-2 rounded-full hover:bg-white/20 transition"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white/10 border border-white/20 backdrop-blur-md p-2 rounded-full hover:bg-white/20 transition"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+
+        {/* Image */}
+        <div className="mt-16 flex justify-center">
+          <div className="relative max-w-3xl">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-3xl rounded-3xl" />
+
+            <img
+              src={crm}
+              alt="Admission Management"
+              className="relative rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 p-6 shadow-2xl w-full"
+            />
+          </div>
+        </div>
       </div>
-
-      {/* CRM Image */}
-      <img
-        src={crm}
-        alt="Admission Management"
-        className="mt-10 md:mt-16 mx-auto md:max-w-2xl hidden md:block"
-      />
-    </div>
+    </section>
   );
 }
 
