@@ -21,7 +21,7 @@ function Landing() {
       <Features />
       <ImageSlider />
       <AboutUs />
-      <Blog />
+      {/* <Blog /> */}
       <FAQ />
       <Footer />
       <ScrollToTopButton />

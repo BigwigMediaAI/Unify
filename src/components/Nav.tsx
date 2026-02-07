@@ -78,7 +78,7 @@ function Nav() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 text-white font-semibold">
-          {["home", "about", "blog", "faq"].map((item) => (
+          {["home", "about", "faq"].map((item) => (
             <button
               key={item}
               onClick={() => handleScrollToSection(item)}
