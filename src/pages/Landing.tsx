@@ -6,7 +6,7 @@ import Universities from "../components/Universities";
 import Features from "../components/Features";
 import AboutUs from "../components/AboutUs";
 import StatsSection from "../components/Stats";
-import Blog from "../components/Blog";
+// import Blog from "../components/Blog";
 
 import ImageSlider from "../components/Testimonial";
 import ScrollToTopButton from "../components/ScrollToTopButton";
