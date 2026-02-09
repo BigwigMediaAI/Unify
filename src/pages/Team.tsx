@@ -49,12 +49,18 @@ const Team: React.FC = () => {
           {/* Biography Block */}
           <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-xl mb-16">
             <p className="text-gray-400 leading-relaxed mb-6">
-              Vipul Dutta is a veteran technology leader and digital pioneer.
-              Across two decades, he has built and scaled high-impact digital
-              ventures across India, Japan, and New Zealand. His leadership
-              roles include Director at Adglobal360 Hakuhodo (Japan), Director
-              at Pensa Media (Google Partner Company), and executive positions
-              at PBL/ACP Media (New Zealand).
+              Vipul Dutta, the all-star of tech entrepreneurship and the
+              Mastermind-in-Chief over at Bigwig Media Group of Companies. With
+              a legendary 23-year run in the high-stakes world of Digital
+              Marketing and Advertising, he's practically royalty in the
+              industry. No kidding! His majestic career is littered with
+              illustrious roles like 'Director of Adglobal360- Hakahodo
+              (Japan),' 'Lord High Director of Pensa Media - a Google Partner
+              Company (India),' and 'Supreme Leader at PBL/ACP Media (New
+              Zealand).' Not just content being one of the pioneer in digital
+              marketing, he's got a serious crush on AI and is hell-bent on
+              spearheading the next wave of innovative firepower in the digital
+              market landscape.
             </p>
 
             <p className="text-gray-400 leading-relaxed">
@@ -73,10 +79,13 @@ const Team: React.FC = () => {
               </h2>
 
               <p className="text-gray-400 leading-relaxed">
-                Unifyi is an AI-powered SaaS platform built to transform how
-                institutions manage admissions. From lead capture to nurturing
-                and conversion, the platform centralizes workflows into a
-                seamless ecosystem.
+                Step up, folks, and prepare to be amazed by the spectacle that
+                is Unifyi! Picture it: An AI-fuelled, SAAS platform that acts as
+                a one-stop-shop for managing leads through the maze-like
+                hilarity that is the universities and institutions admission
+                process. Think of Unifyi as your ticket to the roller coaster
+                ride of lead capture, nurturing, and conversion into admissions,
+                all without losing your hair (or your sanity).
               </p>
             </div>
 
@@ -88,7 +97,12 @@ const Team: React.FC = () => {
               <p className="text-gray-400 leading-relaxed">
                 Powered by a 40+ expert team working around the clock, Unifyi
                 delivers customized solutions that scale enrollment success
-                while maintaining enterprise-grade data security.
+                while maintaining enterprise-grade data security.Also offer you
+                the best-customized solutions! Whether your institution requires
+                a simple solution or complex adjustments, they've got your back!
+                They ensure your lead data is shielded with maximum security and
+                the enrollment success scales up. So stick around with Unifyi
+                and watch the show!
               </p>
             </div>
           </div>

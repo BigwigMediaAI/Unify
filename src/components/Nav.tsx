@@ -125,7 +125,7 @@ function Nav() {
                   <button
                     key={index}
                     onClick={() => handleScrollToSection(feature.id)}
-                    className="text-sm text-white/90 hover:text-white hover:translate-x-1 transition-all duration-200"
+                    className="text-sm text-white/90 hover:text-[#3e77f2] hover:translate-x-1 transition-all duration-200"
                   >
                     {feature.name}
                   </button>
