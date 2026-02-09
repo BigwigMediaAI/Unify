@@ -37,7 +37,10 @@ const FAQ = () => {
   };
 
   return (
-    <section className="relative bg-black text-white py-24 overflow-hidden">
+    <section
+      id="faq"
+      className="relative bg-black text-white py-24 overflow-hidden"
+    >
       {/* Glow background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-150px] left-[-150px] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[160px]" />
