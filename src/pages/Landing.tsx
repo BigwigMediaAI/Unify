@@ -10,6 +10,7 @@ import StatsSection from "../components/Stats";
 
 import ImageSlider from "../components/Testimonial";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import TrustedSection from "../components/TrustedSection";
 
 function Landing() {
   return (
@@ -17,6 +18,7 @@ function Landing() {
       <Nav />
       <Hero />
       <Universities />
+      <TrustedSection />
       <StatsSection />
       <Features />
       <ImageSlider />
