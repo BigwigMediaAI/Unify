@@ -661,13 +661,9 @@ export default function Home() {
             <div className="flex flex-col justify-between gap-3 lg:flex-row lg:items-end">
               {/* LEFT HEADING */}
               <div className="max-w-2xl">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-200 sm:text-xs">
+                <p className="text-2xl font-black uppercase tracking-[0.2em] text-cyan-200 ">
                   Our Services
                 </p>
-
-                <h2 className="mt-1.5 text-2xl font-black leading-[1.1] text-white sm:mt-2 sm:text-3xl lg:text-4xl">
-                  Scroll through the admission journey.
-                </h2>
               </div>
 
               {/* ================= PROGRESS ================= */}
@@ -857,13 +853,10 @@ export default function Home() {
       <section id="about" className="bg-[#061018] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
           <div data-aos="fade-right">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff9a76]">
+            <p className="text-3xl m:text-4xl font-black uppercase tracking-[0.2em] text-[#ff9a76]">
               About Us
             </p>
-            <h2 className="mt-3 text-3xl font-black leading-tight text-white sm:text-4xl">
-              AI, marketing mastery and analytics for sharper institutional
-              growth.
-            </h2>
+
             <div className="mt-6 space-y-4 text-base leading-8 text-slate-400">
               <p>
                 Ever wondered what you would get if you crossed a digital
