@@ -850,6 +850,120 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        id="lead-management"
+        className="bg-[#061018] px-5 py-16 sm:px-8"
+        aria-label="CRM and Analytics Features"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            {/* Content */}
+            <div data-aos="fade-right">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff9a76]">
+                CRM & Business Insights
+              </p>
+
+              <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">
+                Manage leads. Track performance. Grow smarter.
+              </h2>
+
+              <p className="mt-4 text-base leading-7 text-slate-400">
+                A centralized CRM and analytics system designed to manage your
+                sales pipeline, monitor website performance, and track your
+                Google Business presence — all from one powerful dashboard.
+              </p>
+
+              <ul className="mt-6 space-y-4 text-sm leading-6 text-slate-300">
+                <li>
+                  <strong className="text-white">Lead CRM & Assignment:</strong>{" "}
+                  Capture and manage inquiries, assign leads to employees, track
+                  assigned and unassigned leads, and keep your sales pipeline
+                  organized.
+                </li>
+
+                <li>
+                  <strong className="text-white">
+                    Lead Status & Follow-ups:
+                  </strong>{" "}
+                  Mark important leads, track follow-ups, manage interested and
+                  non-interested prospects, and monitor every lead from a single
+                  dashboard.
+                </li>
+
+                <li>
+                  <strong className="text-white">
+                    Smart Search, Filters & Data Control:
+                  </strong>{" "}
+                  Quickly find leads using search and filters, manage lead
+                  records, and import or export data whenever required.
+                </li>
+
+                <li>
+                  <strong className="text-white">Website Analytics:</strong>{" "}
+                  Monitor total users, real-time visitors, sessions, page views,
+                  engagement rate, bounce rate, traffic sources, devices,
+                  browsers, countries, cities, and top-performing pages.
+                </li>
+
+                <li>
+                  <strong className="text-white">
+                    Conversion & Lead Analytics:
+                  </strong>{" "}
+                  Understand how website traffic converts into leads with
+                  conversion rates, lead sources, visitor trends, and
+                  performance insights.
+                </li>
+
+                <li>
+                  <strong className="text-white">
+                    Google Business Insights:
+                  </strong>{" "}
+                  Monitor Google Business reviews, average ratings, rating
+                  distribution, profile performance, ranking insights,
+                  competitors, and customer sentiment from one place.
+                </li>
+              </ul>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <button
+                  onClick={() => scrollToSection("#contact")}
+                  className="rounded-2xl bg-[#ff7a59] px-5 py-2.5 text-sm font-bold text-white"
+                >
+                  Request Demo
+                </button>
+
+                <button
+                  onClick={() => scrollToSection("#services")}
+                  className="rounded-2xl border border-white/10 px-5 py-2.5 text-sm text-white"
+                >
+                  Explore Services
+                </button>
+              </div>
+            </div>
+
+            {/* Visual */}
+            <div
+              data-aos="zoom-in"
+              className="rounded-[1.5rem] border border-white/10 bg-[#08111d] p-4"
+            >
+              <Image
+                src="/lead.png"
+                alt="CRM lead management and business analytics dashboard"
+                width={1200}
+                height={900}
+                className="h-auto w-full rounded-[1rem]"
+              />
+
+              <p className="mt-4 text-sm leading-6 text-slate-400">
+                Get complete visibility into your leads, website performance,
+                and Google Business presence through centralized dashboards and
+                actionable insights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="bg-[#061018] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
           <div data-aos="fade-right">
