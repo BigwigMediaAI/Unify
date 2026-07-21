@@ -9,6 +9,7 @@ import {
   useTransform,
   type Variants,
 } from "framer-motion";
+import AOS from "aos";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -348,12 +349,8 @@ const item: Variants = {
 export default function Home() {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const heroVisualRef = useRef<HTMLDivElement | null>(null);
-  const servicesRef = useRef<HTMLElement | null>(null);
-  const servicesTrackRef = useRef<HTMLDivElement | null>(null);
-  const firstServiceCardRef = useRef<HTMLElement | null>(null);
   const [activeService, setActiveService] = useState(0);
   const [activeFaq, setActiveFaq] = useState(0);
-  const [cardStep, setCardStep] = useState(0);
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 0.35], [0, -72]);
 
@@ -364,6 +361,14 @@ export default function Home() {
         repeat: -1,
         duration: 24,
         ease: "none",
+      });
+
+      AOS.init({
+        duration: 900,
+        once: true,
+        offset: 120,
+        easing: "ease-out-cubic",
+        delay: 80,
       });
 
       const servicesTrack =
@@ -432,18 +437,24 @@ export default function Home() {
     >
       <SiteNavbar items={navItems} onNavigate={scrollToSection} />
 
-      <section
+      <motion.section
         id="home"
+        initial="hidden"
+        animate="visible"
+        variants={container}
         className="relative overflow-hidden px-5 pb-24 pt-32 sm:px-8 lg:pt-36"
       >
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_18%,rgba(45,212,191,0.16),transparent_26%),radial-gradient(circle_at_86%_12%,rgba(255,122,89,0.16),transparent_30%),linear-gradient(135deg,#02050b_0%,#060c16_60%,#08131e_100%)]" />
         <div className="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[130px]" />
         <div className="absolute bottom-10 right-0 -z-10 h-80 w-80 rounded-full bg-orange-500/10 blur-[140px]" />
+        <div className="absolute left-10 top-24 hidden h-40 w-40 rounded-full bg-cyan-300/10 blur-[80px] lg:block" />
+        <div className="absolute right-10 top-40 hidden h-32 w-32 rounded-full bg-orange-400/10 blur-[80px] lg:block" />
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr]">
           <motion.div
             variants={container}
             initial="hidden"
             animate="visible"
+            data-aos="fade-right"
             className="max-w-2xl"
           >
             <motion.p
@@ -469,6 +480,7 @@ export default function Home() {
             </motion.p>
             <motion.div
               variants={item}
+              data-aos="fade-up"
               className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <button
@@ -486,7 +498,11 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          <motion.div style={{ y: heroY }} className="relative">
+          <motion.div
+            style={{ y: heroY }}
+            className="relative"
+            data-aos="fade-left"
+          >
             <div
               ref={heroVisualRef}
               className="relative rounded-[2rem] border border-white/10 bg-[#08111d] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
@@ -517,7 +533,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <section className="overflow-hidden border-y border-white/10 bg-[#07111c] py-5">
         <div className="gsap-marquee flex w-max items-center gap-12 whitespace-nowrap px-6">
@@ -538,33 +554,44 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="platform" className="bg-[#050b12] px-5 py-20 sm:px-8">
+      <motion.section
+        id="platform"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+        className="relative overflow-hidden bg-[#050b12] px-5 py-20 sm:px-8"
+      >
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-80 bg-gradient-to-t from-[#02050a] to-transparent" />
+        <div className="absolute left-1/2 top-0 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-400/5 blur-[140px]" />
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-            <div>
+            <motion.div variants={item}>
               <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff9a76]">
                 Platform outcomes
               </p>
               <h2 className="mt-3 text-3xl font-black leading-tight text-white sm:text-4xl">
                 UNIFYI - Breathing life into admission management
               </h2>
-            </div>
-            <p className="text-base leading-8 text-slate-400">
+            </motion.div>
+            <motion.p
+              variants={item}
+              className="text-base leading-8 text-slate-400"
+            >
               We are a global enrollment platform designed to equip institutions
               for growth with centralized admissions, lead intelligence,
               automation, and analytics.
-            </p>
+            </motion.p>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {outcomes.map((outcome, index) => (
               <motion.article
                 key={outcome.title}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="rounded-[1.5rem] border border-white/10 bg-[#09111b] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
+                variants={item}
+                data-aos="fade-up"
+                className="rounded-[1.5rem] border border-white/10 bg-[#09111b]/95 p-5 shadow-[0_22px_70px_rgba(0,0,0,0.32)] backdrop-blur"
+                transition={{ duration: 0.55, delay: index * 0.05 }}
               >
                 <span className="grid h-10 w-10 place-items-center rounded-2xl bg-cyan-400/10 text-sm font-black text-cyan-300">
                   {index + 1}
@@ -579,7 +606,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-[#08111d] p-4 shadow-[0_24px_70px_rgba(0,0,0,0.32)]">
+          <div
+            className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-[#08111d] p-4 shadow-[0_24px_70px_rgba(0,0,0,0.32)]"
+            data-aos="zoom-in"
+          >
             <Image
               src={admissionVisual}
               alt="Admission management workflow"
@@ -587,23 +617,33 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-[#07111c] px-5 py-16 text-white sm:px-8">
+      <motion.section
+        className="bg-[#07111c] px-5 py-16 text-white sm:px-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+        data-aos="fade-up"
+      >
         <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {stats.map((stat) => (
-            <div
+          {stats.map((stat, index) => (
+            <motion.div
               key={stat.value}
-              className="rounded-2xl border border-white/10 bg-white/[0.06] p-5"
+              variants={item}
+              transition={{ duration: 0.55, delay: index * 0.05 }}
+              data-aos="fade-up"
+              className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.18)]"
             >
               <p className="text-3xl font-black text-[#f3c969]">{stat.value}</p>
               <p className="mt-2 text-sm leading-6 text-white/65">
                 {stat.label}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       <section
         id="services"
@@ -816,7 +856,7 @@ export default function Home() {
 
       <section id="about" className="bg-[#061018] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
+          <div data-aos="fade-right">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff9a76]">
               About Us
             </p>
@@ -854,6 +894,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
+            data-aos="zoom-in"
             className="rounded-[2rem] border border-white/10 bg-[#08111d] p-4 shadow-[0_24px_70px_rgba(0,0,0,0.3)]"
           >
             <Image
@@ -881,10 +922,15 @@ export default function Home() {
             </div>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <article
+            {testimonials.map((testimonial, index) => (
+              <motion.article
                 key={testimonial.name}
-                className="rounded-[1.6rem] border border-white/10 bg-[#09111b] p-6 shadow-[0_16px_44px_rgba(0,0,0,0.2)]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.55, delay: index * 0.08 }}
+                data-aos="fade-up"
+                className="rounded-[1.6rem] border border-white/10 bg-[#09111b] p-6 shadow-[0_16px_44px_rgba(0,0,0,0.28)]"
               >
                 <p className="text-sm leading-7 text-slate-400">
                   &quot;{testimonial.text}&quot;
@@ -903,15 +949,22 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="faq" className="bg-[#07111c] px-5 py-20 text-white sm:px-8">
+      <motion.section
+        id="faq"
+        className="bg-[#07111c] px-5 py-20 text-white sm:px-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+      >
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+          <motion.div variants={item}>
             <p className="text-xs font-black uppercase tracking-[0.2em] text-[#f3c969]">
               FAQ
             </p>
@@ -922,11 +975,12 @@ export default function Home() {
               Everything you need to know about Unifyi, from integrations and
               security to onboarding and analytics.
             </p>
-          </div>
+          </motion.div>
           <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div
                 key={faq.question}
+                data-aos="fade-up"
                 className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06]"
               >
                 <button
@@ -956,12 +1010,20 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="contact" className="bg-[#030711] px-5 py-20 sm:px-8">
+      <motion.section
+        id="contact"
+        className="bg-[#030711] px-5 py-20 sm:px-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+      >
+        <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#0b1118]/80 to-transparent" />
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[#08111d] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:p-8">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-            <div>
+            <motion.div variants={item} data-aos="fade-right">
               <p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff9a76]">
                 Contact
               </p>
@@ -972,11 +1034,14 @@ export default function Home() {
                 Reach us directly for demos, onboarding, integrations, and
                 support.
               </p>
-            </div>
+            </motion.div>
             <div className="grid gap-4 md:grid-cols-3">
-              {contactDetails.map((detail) => (
-                <article
+              {contactDetails.map((detail, index) => (
+                <motion.article
                   key={detail.label}
+                  variants={item}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  data-aos="fade-up"
                   className="rounded-[1.3rem] border border-white/10 bg-white/[0.05] p-5"
                 >
                   <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-300">
@@ -997,12 +1062,12 @@ export default function Home() {
                   <p className="mt-3 text-sm leading-6 text-slate-500">
                     {detail.note}
                   </p>
-                </article>
+                </motion.article>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <SiteFooter items={navItems} />
     </main>
